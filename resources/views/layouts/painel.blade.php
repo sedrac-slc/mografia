@@ -16,11 +16,11 @@
         <div class="sidebar-heading border-bottom bg-light">
             <a href="#">eimono</a>
         </div>
-        <div class="list-group list-group-flush">
+        <div class="list-group list-group-flush">{{--
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#">
                 <i class="fa-solid fa-elevator"></i>
                 <span>Gerenciamento</span>
-            </a>
+            </a>--}}
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{route('painel.page','projecto')}}">
                 <i class="fa-solid fa-folder-open"></i>
                 <span>Projectos</span>
@@ -32,11 +32,11 @@
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#">
                 <i class="fa-solid fa-users"></i>
                 <span>Colaboladores</span>
-            </a>
+            </a>{{--
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#">
                 <i class="fa-solid fa-money-bill-wave"></i>
                 <span>Pagamento</span>
-            </a>
+            </a>--}}
            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#">
                 <i class="fa-solid fa-user"></i>
                 <span>Conta</span>
