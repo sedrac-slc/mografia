@@ -22,7 +22,7 @@
                     </td>
                     <td class="min">
                         <a href="{{route('subtitulo.page',$subtitulo->id)}}" value="{{$subtitulo->id}}" desc="{{$subtitulo->descricao}}" class="text-warning text-decoration-none d-flex act" data-bs-toggle="modal" data-bs-target="#modal-actualizacao">
-                            <i class="fa-solid fa-folder-open mt-1 mr-2"></i>
+                            <i class="fa-solid fa-arrows-rotate mt-1 mr-2"></i>
                             <span>actuaização</span>
                         </a>
                     </td>

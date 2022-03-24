@@ -77,9 +77,9 @@
     <div class="mt-1 mb-4 text-center">
         @if (Route::has('login'))
             @auth
-                <a href="{{ route('painel') }}" class="">
-                    <i class=""></i>
-                    <span>Dashboard</span>
+                <a href="{{ route('painel') }}" class=" text-decoration-none">
+                        <i class="fa-solid fa-panel-ews"></i>
+                    <span>Painel</span>
                 </a>
                 @else
                     <a href="{{ route('login') }}" class="btn btn-primary m-2">

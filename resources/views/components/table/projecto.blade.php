@@ -23,7 +23,7 @@
                                     data-inicio="{{$projecto->data_inicio}}"
                                     data-fim="{{$projecto->data_fim}}"
                                     pro-desc="{{$projecto->pro_descricao}}">
-                            <i class="fa-solid fa-folder-open mt-1 mr-2"></i>
+                            <i class="fa-solid fa-arrows-rotate mt-1 mr-2"></i>
                             <span>actuaização</span>
                         </a>
                     </td>
