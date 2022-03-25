@@ -31,7 +31,8 @@ class ProjectoRequest extends FormRequest
             'acesso' => ['required'],
             'data_inicio' => ['required','date'],
             'data_fim' => ['required','date'],
-            'pro_descricao' => ['required']
+            'pro_descricao' => ['required'],
+            'orcamento'
         ];
     }
 }

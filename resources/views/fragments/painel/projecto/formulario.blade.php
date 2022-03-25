@@ -25,13 +25,20 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
           </div>
-          <div class="col-md-12">
+          <div class="col-md-6">
              <label for="nome" class="form-label">
                 <i class="fa-solid fa-file-signature"></i>
                 <span>Nome projecto:</span>
               </label>
               <input type="text" name="nome" id="nome" value="{{old('nome')}}" class="form-control" id="nome_completo" required/>
           </div>
+          <div class="col-md-6">
+            <label for="nome" class="form-label">
+               <i class="fa-solid fa-money-bill-wave"></i>
+               <span>Orcamento:</span>
+             </label>
+             <input type="number" name="orcamento" id="orcamento" value="{{old('orcamento')}}" class="form-control" id="nome_completo" required/>
+         </div>
           <div class="col-md-6 mt-2">
             <label for="acesso" class="form-label">
                 <i class="fa-solid fa-universal-access"></i>

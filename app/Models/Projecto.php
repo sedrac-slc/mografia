@@ -10,6 +10,6 @@ class Projecto extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id','tema_id','nome','acesso','tipo','data_inicio','data_fim','pro_descricao'
+        'user_id','tema_id','nome','acesso','tipo','data_inicio','data_fim','pro_descricao','orcamento'
     ];
 }

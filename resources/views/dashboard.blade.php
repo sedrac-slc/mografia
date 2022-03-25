@@ -9,7 +9,7 @@
         </p>
     </article>
     <section class="ml-4">
-        <div class="list-group">
+        <div class="list-group" id="group-desc">
             <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
                 <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1">Projectos</h5>
@@ -45,18 +45,21 @@
                 <small class="text-muted">Associado\projecto</small>
              </a>
              <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Conta</h5>
-                        <small class="text-muted"><i class="fa-solid fa-user"></i></small>
-                    </div>
-                    <p class="mb-1 text-justify text-indent">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Conta</h5>
+                    <small class="text-muted"><i class="fa-solid fa-user"></i></small>
+                </div>
+                <p class="mb-1 text-justify text-indent">
                         Trás informações da sua conta, poderás alterar e mografia oferece a possibilidade de eliminar,
                         a sua conta permanentimente.
-                    </p>
-                    <small class="text-muted">Associado\projecto</small>
+                </p>
+                <small class="text-muted">Associado\projecto</small>
              </a>
         </div>
     </section>
   </div>
  </section>
+@endsection
+@section('javascript-painel')
+    <script src="{{asset('js/dash.js')}}"></script>
 @endsection

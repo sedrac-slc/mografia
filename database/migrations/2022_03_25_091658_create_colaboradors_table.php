@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('titulos', function (Blueprint $table) {
+        Schema::create('colaboradors', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('tema_id')->unsigned();
-            $table->string('descricao',100);
-            $table->unique(['tema_id','descricao']);
-            $table->integer('prioridade')->unsigned()->default(0);
-            $table->foreign('tema_id')->references('id')->on('temas')->onDelete('cascade');
+            $table->bigInteger('user_id')->unsigned();
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subtemas');
+        Schema::dropIfExists('colaboradors');
     }
 };

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->bigInteger('chave')->unsigned();
             $table->string('nome',100)->default('NO_CONTEUDO');
             $table->enum('tipo',['TITULO','SUBTITULO'])->default('SUBTITULO');
-            $table->enum('conteudo',['CONCEITO','HISTORIA','BIBLIOGRAFIA','PERCURSOR','GERAL'])->default('GERAL');
+            $table->enum('conteudo',['CONCEITO','HISTORIA','BIBLIOGRAFIA','PERCURSOR','GERAL','IMPORTANCIA'])->default('GERAL');
             $table->longText('descricao');
             $table->integer('prioridade')->unsigned()->default(0);
             $table->unique(['chave','tipo','descricao']);

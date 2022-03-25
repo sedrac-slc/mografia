@@ -23,8 +23,9 @@ return new class extends Migration
             $table->date('data_inicio');
             $table->date('data_fim');
             $table->string('pro_descricao');
+            $table->bigInteger('orcamento')->default(0);
             $table->timestamps();
-            $table->unique(['user_id','tema_id','nome']);
+            $table->unique(['user_id','tema_id','nome','orcamento']);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('tema_id')->references('id')->on('temas')->onDelete('cascade');
         });

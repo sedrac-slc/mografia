@@ -27,8 +27,10 @@ class PainelController extends Controller
                                            ->orderBy('id','DESC')
                                            ->paginate(5);
                 return view("fragments.painel.tema",compact('temas'));
+            default:
+                return view("dashboard");
         }
-        return "";
+        return view("dashboard");
     }
 
 }
