@@ -13,7 +13,7 @@
                     @method('DELETE')
                     <div class="modal-body text-center">
                         <input type="hidden" class="cls" name="id" value=""/>
-                        <input type="hidden" name="tema_id" value="{{$tema->id}}"/>
+                        <input type="hidden" name="projecto_id" value="{{$projecto->id}}"/>
                         <input type="hidden" class="desc" name="descricao"/>
                         <div class="m-auto">
                             <div class="">

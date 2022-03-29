@@ -11,9 +11,7 @@
 <section class="container mt-4 " style="overflow-y: auto;" id="container">
 
 </section>
-<section class="position-absolue end-50 start-50">
-    <p>oi</p>
-</section>
+
 @endsection
 @section('javascript')
     <script src="{{asset('js/conteudo/component.js')}}"></script>

@@ -1,5 +1,5 @@
-<table class="table table-borderless" id="">
-    <thead class="bg-dark  text-monospace">
+<table class="table table-borderless" id="table-titulo">
+    <thead class="bg-primary text-monospace">
         <tr class="text-white">
             <th colspan="6">
                 titulos
@@ -21,19 +21,19 @@
                         </a>
                     </td>
                     <td class="min">
-                        <a href="{{route('subtitulo.page',$titulo->id)}}" class="text-primary text-decoration-none d-flex">
+                        <a href="{{route('titulo.subtitulo',$titulo->id)}}" class="text-primary text-decoration-none d-flex tit">
                             <i class="fa-solid fa-folder-tree mt-1 mr-2"></i>
-                            <span>subtitulo</span>
+                            <span>subtítulo</span>
                         </a>
                     </td>
                     <td class="min">
-                        <a href="{{route('titulo.page',$tema->id)}}" value="{{$titulo->id}}" desc="{{$titulo->descricao}}" class="text-warning text-decoration-none d-flex act" data-bs-toggle="modal" data-bs-target="#modal-actualizacao">
+                        <a href="#" value="{{$titulo->id}}" desc="{{$titulo->descricao}}" prec="{{$titulo->prioridade}}" class="text-warning text-decoration-none d-flex act" data-bs-toggle="modal" data-bs-target="#modal-actualizacao">
                             <i class="fa-solid fa-arrows-rotate mt-1 mr-2"></i>
                             <span>actuaização</span>
                         </a>
                     </td>
                     <td class="min">
-                        <a href="{{route('titulo.page',$tema->id)}}" value="{{$titulo->id}}" desc="{{$titulo->descricao}}" class="text-danger text-decoration-none d-flex act" data-bs-toggle="modal" data-bs-target="#modal-delete-tema">
+                        <a href="#" value="{{$titulo->id}}" desc="{{$titulo->descricao}}" class="text-danger text-decoration-none d-flex act" data-bs-toggle="modal" data-bs-target="#modal-delete-tema">
                             <i class="fa-solid fa-close mt-1 mr-2"></i>
                             <span>apagar</span>
                         </a>
@@ -43,34 +43,35 @@
         @endisset
     </tbody>
 </table>
+
 @isset($titulos)
 @if( $titulos->lastPage() > 1)
 <nav>
     <ul class="pagination pagination-sm">
         @if($titulos->currentPage() - 1 >= 1)
-            <a class="page-link" href="{{route('titulo.page',$tema->id)}}?page={{$titulos->currentPage()-1}}#table-titulo">
+            <a class="page-link" href="?page={{$titulos->currentPage()-1}}#table-titulo">
                 <i class="fa-solid fa-angles-left"></i>
             </a>
         @else
-            <a class="page-link" href="{{route('titulo.page',$tema->id)}}?page={{$titulos->currentPage()}}#table-titulo">
+            <a class="page-link" href="?page={{$titulos->currentPage()}}#table-titulo">
                 <i class="fa-solid fa-angles-left"></i>
             </a>
         @endif
         @for($i = 1; $i <= $titulos->lastPage(); $i++)
           <li class="page-item">
             @if($i == $titulos->currentPage())
-                <a class="page-link active bg-primary text-white" href="{{route('titulo.page',$tema->id)}}?page={{$i}}#table-titulo">{{$i}}</a>
+                <a class="page-link active bg-primary text-white" href="?page={{$i}}#table-titulo">{{$i}}</a>
             @else
-                <a class="page-link" href="{{route('titulo.page',$tema->id)}}?page={{$i}}#table-titulo">{{$i}}</a>
+                <a class="page-link" href="?page={{$i}}#table-titulo">{{$i}}</a>
             @endif
           </li>
         @endfor
         @if($titulos->currentPage() + 1 < $titulos->lastPage())
-            <a class="page-link" href="{{route('titulo.page',$tema->id)}}?page={{$titulos->currentPage() + 1}}#table-titulo">
+            <a class="page-link" href="?page={{$titulos->currentPage() + 1}}#table-titulo">
                 <i class="fa-solid fa-angles-right"></i>
             </a>
         @else
-            <a class="page-link" href="{{route('titulo.page',$tema->id)}}?page={{$titulos->lastPage()}}#table-titulo">
+            <a class="page-link" href="?page={{$titulos->lastPage()}}#table-titulo">
                 <i class="fa-solid fa-angles-right"></i>
             </a>
         @endif

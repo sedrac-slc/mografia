@@ -1,15 +1,13 @@
 @extends('layouts.painel')
-@section('css-painel')
-    <link rel="stylesheet"  href="{{asset('css/scrollbar.css')}}"/>
-@endsection
 @section('content-painel')
 <section class="container">
 @isset($temas)
   <div class="p-2 border">
     <form action="{{route('tema.view.projecto')}}" method="POST">
         @csrf
+        <input type="hidden" name="redirect" value="projecto"/>
         <label for="tema_id" class="form-label">
-            <i class="fa-solid fa-list"></i>
+            <i class="fa-solid fa-bars"></i>
             <span>Escolha o tema:</span>
         </label>
         <div class="input-group mb-3">
@@ -27,6 +25,7 @@
 @endisset
 @endsection
 @section('javascript-painel')
+    <script src="{{asset('js/painel/projecto.js')}}"></script>
     <script src="{{asset('js/produto.formulario.js')}}"></script>
     <script src="{{asset('js/produto.js')}}"></script>
 @endsection

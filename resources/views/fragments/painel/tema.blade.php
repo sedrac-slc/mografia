@@ -1,7 +1,4 @@
 @extends('layouts.painel')
-@section('css-painel')
-    <link rel="stylesheet"  href="{{asset('css/scrollbar.css')}}"/>
-@endsection
 @section('content-painel')
 <section class="m-auto m-2 p-2" id="">
     <form method="POST" action="{{route('tema.create')}}">
@@ -24,5 +21,6 @@
 </section>
 @endsection
 @section('javascript-painel')
+    <script src="{{asset('js/painel/tema.js')}}"></script>
     <script src="{{asset('js/function.js')}}"></script>
 @endsection

@@ -22,10 +22,7 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        $nacionalidades = DB::table('nacionalidades')->get();
-        $provincias = DB::table('provincias')->get();
-
-        return view('auth.register',compact('nacionalidades','provincias'));
+        return view('auth.register');
     }
 
     /**
@@ -67,7 +64,11 @@ class RegisteredUserController extends Controller
         return view('dashboard');
 
         }catch(QueryException $e){
-            return "error sedrac";
+            return view('layouts.error',[
+                'message' => "Não possível criar este usuário",
+                'descricao' =>  "$request->nome_completo",
+                'back' => "register"
+            ]);
         }
 
     }

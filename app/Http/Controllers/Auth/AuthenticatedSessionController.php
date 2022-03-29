@@ -9,6 +9,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\QueryException;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -30,11 +31,19 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
-        $request->authenticate();
-        $request->session()->regenerate();
-        return redirect()
+        try{
+            $request->authenticate();
+            $request->session()->regenerate();
+            return redirect()
                     ->route('painel')
                     ->with('message','Autenticação feita com sucesso');
+        }catch(QueryException $e){
+            return view('layouts.error',[
+                'message' => "Senha ou email, errado",
+                'descricao' =>  "",
+                'back' => "register"
+            ]);
+        }
     }
 
     /**

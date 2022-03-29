@@ -24,8 +24,9 @@ class TituloRequest extends FormRequest
     public function rules()
     {
         return [
-            'tema_id' => ['required','regex:/\d+/u'],
-            'descricao' => ['required','string']
+            'projecto_id' => ['required','regex:/\d+/u'],
+            'descricao' => ['required','string'],
+            'prioridade'
         ];
     }
 }

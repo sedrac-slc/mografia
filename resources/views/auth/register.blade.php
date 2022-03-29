@@ -104,3 +104,6 @@
     </form>
 </section>
 @endsection
+@section('javascript-painel')
+    <script src="{{asset('js/painel/colaborador.js')}}"></script>
+@endsection

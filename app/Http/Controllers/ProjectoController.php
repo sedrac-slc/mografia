@@ -19,10 +19,22 @@ class ProjectoController extends Controller
     private function pro(){
         return DB::table('projectos')
                  ->join('temas','projectos.tema_id','=','temas.id')
+                 ->where('projectos.user_id',Auth::user()->id)
                  ->select('projectos.*','temas.descricao')
                  ->orderBy('projectos.id','DESC')
                  ->paginate($this->tam);
      }
+
+     public function titulo($id){
+        if(!$projecto = Projecto::find($id))
+            return redirect()->back();
+        $tema = DB::table('temas')->find($projecto->id);
+        $titulos = DB::table('titulos')->where('projecto_id',$projecto->id)
+                    ->orderBy('id','DESC')
+                    ->paginate($this->tam);
+        $redirect = "projecto";
+        return view("fragments.painel.titulo",compact('redirect','tema','projecto','titulos'));
+    }
 
     public function default($id){
         if(!$tema = DB::table('temas')->find($id))
@@ -31,13 +43,19 @@ class ProjectoController extends Controller
         return view('fragments.painel.projecto.formulario',compact('tema','listTipo'));
     }
 
+    public function elements($id){
+        $projectos = Projecto::where('tema_id',$id)->orderBy('id','DESC')->get();
+        return json_decode($projectos);
+    }
+
     public function store(ProjectoRequest $request){
-        try{
+      try{
             Projecto::create($request->all());
             $temas = DB::table('temas')->where('user_id',Auth::user()->id)->get();
             $projectos = $this->pro();
             $listTipo = ListTipoProjecto::all();
-            return view('fragments.painel.projecto',compact('projectos','temas','listTipo'));
+            $redirect = "projecto";
+            return view('fragments.painel.projecto',compact('redirect','projectos','temas','listTipo'));
         }catch(QueryException $e){
             return view('layouts.error',[
                 'message' => "Não foi possível criar o projecto,
@@ -53,11 +71,12 @@ class ProjectoController extends Controller
         try{
             if(!$projecto = Projecto::find($request->id))
                 return redirect()->back();
-            $projecto->update($request->all());
-            $temas = DB::table('temas')->where('user_id',Auth::user()->id)->get();
             $projectos = $this->pro();
             $listTipo = ListTipoProjecto::all();
-            return view('fragments.painel.projecto',compact('projectos','temas','listTipo'));
+            $projecto->update($request->all());
+            $temas = DB::table('temas')->where('user_id',Auth::user()->id)->get();
+            $redirect = "projecto";
+            return view('fragments.painel.projecto',compact('redirect','projectos','temas','listTipo'));
         }catch(QueryException $e){
             return view('layouts.error',[
                 'message' => "Não foi possível actualizar o projecto,
@@ -78,7 +97,8 @@ class ProjectoController extends Controller
             $temas = DB::table('temas')->where('user_id',Auth::user()->id)->get();
             $projectos = $this->pro();
             $listTipo = ListTipoProjecto::all();
-            return view('fragments.painel.projecto',compact('projectos','temas','listTipo'));
+            $redirect = "projecto";
+            return view('fragments.painel.projecto',compact('redirect','projectos','temas','listTipo'));
         }catch(QueryException $e){
             return view('layouts.error',[
                 'message' => "Não foi possível apagar o projecto,

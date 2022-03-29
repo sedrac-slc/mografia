@@ -19,7 +19,7 @@
                             <i class="fa-solid fa-folder-open"></i>
                             <span class="ml-2">Subtitulo:</span>
                         </label>
-                        <input type="text" class="form-control desc" name="descricao" value="" aria-describedby="basic-addon1" required/>
+                        <input type="text" class="form-control desc" name="sub_descricao" value="" aria-describedby="basic-addon1" required/>
                     </div>
                 </div>
                 <div class="modal-footer">

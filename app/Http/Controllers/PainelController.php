@@ -17,6 +17,7 @@ class PainelController extends Controller
                 $temas = DB::table('temas')->where('user_id',Auth::user()->id)->get();
                 $projectos = DB::table('projectos')
                                 ->join('temas','projectos.tema_id','=','temas.id')
+                                ->where('projectos.user_id',Auth::user()->id)
                                 ->select('projectos.*','tema_id','nome','temas.descricao')
                                 ->orderBy('projectos.id','DESC')
                                 ->paginate($this->tam);
@@ -27,6 +28,14 @@ class PainelController extends Controller
                                            ->orderBy('id','DESC')
                                            ->paginate(5);
                 return view("fragments.painel.tema",compact('temas'));
+            case "conta":
+                $nacionalidades = DB::table('nacionalidades')->get();
+                $provincias = DB::table('provincias')->get();
+                return view("fragments.painel.conta",compact('nacionalidades','provincias'));
+            case "colaborador":
+                if(!$colaborador = DB::table('colaboradors')->where('user_id',Auth::user()->id)->first())
+                    return view("fragments.painel.colaborador");
+                return view("fragments.painel.colaborador",compact('colaborador'));
             default:
                 return view("dashboard");
         }

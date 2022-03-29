@@ -1,14 +1,11 @@
 @extends('layouts.default')
+@section('bg-body','class=bg-primary')
 @section('javascript')
     <script src="{{asset('js/produto.formulario.js')}}"></script>
 @endsection
 @section('content')
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">mografia</a>
-    </div>
-</nav>
-<section class="m-auto w-75 p-2">
+@include('components.insert.nav-painel')
+<section class="m-auto w-75 p-2 bg-white roundend">
     <div class="text-center">
         <h4>{{$tema->descricao}}</h4>
     </div>
@@ -30,7 +27,7 @@
                 <i class="fa-solid fa-file-signature"></i>
                 <span>Nome projecto:</span>
               </label>
-              <input type="text" name="nome" id="nome" value="{{old('nome')}}" class="form-control" id="nome_completo" required/>
+              <input type="text" name="nome" id="nome" value="{{old('nome')}}" class="form-control" required/>
           </div>
           <div class="col-md-6">
             <label for="nome" class="form-label">

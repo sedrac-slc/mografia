@@ -14,7 +14,7 @@
                     <div class="modal-body text-center">
                         <input type="hidden" class="cls" name="id" value=""/>
                         <input type="hidden" name="titulo_id" value="{{$titulo->id}}"/>
-                        <input type="hidden" class="desc" name="descricao"/>
+                        <input type="hidden" class="desc" name="sub_descricao"/>
                         <div class="m-auto">
                             <div class="">
                                 <i class="fa-solid fa-info fa-4x p-4"></i>

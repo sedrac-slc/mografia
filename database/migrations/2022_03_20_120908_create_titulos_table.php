@@ -15,13 +15,14 @@ return new class extends Migration
     {
         Schema::create('titulos', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('tema_id')->unsigned();
+            $table->bigInteger('projecto_id')->unsigned();
             $table->string('descricao',100);
-            $table->unique(['tema_id','descricao']);
+            $table->unique(['projecto_id','descricao']);
             $table->integer('prioridade')->unsigned()->default(0);
-            $table->foreign('tema_id')->references('id')->on('temas')->onDelete('cascade');
             $table->timestamps();
+            $table->foreign('projecto_id')->references('id')->on('projectos')->onDelete('cascade');
         });
+
     }
 
     /**
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subtemas');
+        Schema::dropIfExists('titulos');
     }
 };

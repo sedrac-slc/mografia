@@ -1,7 +1,7 @@
 <table class="table table-borderless" id="table-tema">
-    <thead class="bg-dark  text-monospace">
+    <thead class="bg-primary text-monospace">
         <tr class="text-white">
-            <th colspan="6">
+            <th colspan="5">
                 Temas
             </th>
         </tr>
@@ -15,15 +15,9 @@
                     </td>
                     <td class="border-right border-left border-bottom">{{$tema->descricao}}</td>
                     <td class="min">
-                        <a href="{{route('projecto.page',$tema->id)}}" class="text-info text-decoration-none d-flex">
-                            <i class="fa-solid fa-bars mt-1 mr-2"></i>
+                        <a href="{{route('projecto.page',$tema->id)}}" class="text-info text-decoration-none d-flex" id="url-projecto">
+                            <i class="fa-solid fa-folder-open mt-1 mr-2"></i>
                             <span>projecto</span>
-                        </a>
-                    </td>
-                    <td class="min">
-                        <a href="{{route('titulo.page',$tema->id)}}" class="text-primary text-decoration-none d-flex">
-                            <i class="fa-solid fa-folder-tree mt-1 mr-2"></i>
-                            <span>título</span>
                         </a>
                     </td>
                     <td class="min">

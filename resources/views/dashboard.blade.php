@@ -61,5 +61,6 @@
  </section>
 @endsection
 @section('javascript-painel')
+    <script src="{{asset('js/painel/home.js')}}"></script>
     <script src="{{asset('js/dash.js')}}"></script>
 @endsection

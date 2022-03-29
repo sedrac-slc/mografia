@@ -35,9 +35,13 @@
                 </button>
             </div>
             @if (Route::has('password.request'))
-            <a class="mt-4 ml-2" href="{{ route('password.request') }}">
-                Esqueceste a senha?
-            </a>
+                <a class="mt-4 ml-2" href="{{ route('password.request') }}">
+                    Esqueceste a senha?
+                </a>
+                <br/>
+                <a class="mt-4 ml-2" href="{{ route('home') }}">
+                   página inicial
+                </a>
             @endif
         </div>
     </form>

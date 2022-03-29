@@ -10,7 +10,7 @@ class Subtitulo extends Model
     use HasFactory;
 
     protected $fillable = [
-        'titulo_id','descricao'
+        'titulo_id','sub_descricao','prioridade'
     ];
 
 }

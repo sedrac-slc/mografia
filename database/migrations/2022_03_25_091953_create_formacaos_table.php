@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('escola',100);
             $table->string('pais',100);
             $table->string('estado',100);
-            $table->enum('categoria',['BASE','MEDIO','TECNICO','LINCENCIATURA','MESTRADO','DOUTORAMENTO'])->default('BASE');
+            $table->enum('categoria',['BASE','MEDIO','TECNICO','LICENCIATURA','MESTRADO','DOUTORAMENTO'])->default('BASE');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

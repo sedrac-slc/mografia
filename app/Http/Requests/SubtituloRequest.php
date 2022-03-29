@@ -25,7 +25,8 @@ class SubtituloRequest extends FormRequest
     {
         return [
             'titulo_id' => ['required','regex:/\d+/u'],
-            'descricao' => ['required','string']
+            'sub_descricao' => ['required','string'],
+            'prioridade'
         ];
     }
 }

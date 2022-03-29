@@ -1,19 +1,4 @@
 const gerar = $('#gerar');
-const provincia = $('#provincia_id');
-const municipio = $('#municipio_id');
-
-provincia.on('change',()=>{
-  let template = '';
-  let val = provincia.val();
-  if(val > 0){
-     $.get('/laravel/mografia/public/municipio/json/'+val,function(response){
-         response.forEach(mun => {
-            template += `<option value='${mun.id}'>${mun.descricao}</option>`;
-        });
-        municipio.html(template);
-     });
-  }else{municipio.html(template);}
-});
 
 function space(cap,variable){
     let array = variable.split(" ");

@@ -1,9 +1,9 @@
-<div style="overflow-x:auto;" class="scroll">
-<table class="table table-borderless" id="">
-    <thead class="bg-dark  text-monospace">
+<div style="overflow-x:auto;" class="">
+<table class="table table-borderless" id="table-projecto">
+    <thead class="bg-primary  text-monospace">
         <tr class="text-white">
             <th colspan="2" class="text-center">Nome</th>
-            <th colspan="2" class="text-center">Acção</th>
+            <th colspan="4" class="text-center">Acção</th>
             <th>Tema</th>
             <th>Acesso</th>
             <th>Tipo</th>
@@ -17,6 +17,18 @@
                         <input type="checkbox" class="form-check tema-check" name="" id="{{$projecto->id}}"/>
                     </td>
                     <td class="border-right border-left border-bottom">{{$projecto->nome}}</td>
+                    <td class="min">
+                        <a href="{{route('projecto.titulo',$projecto->id)}}" class="text-primary text-decoration-none d-flex tit">
+                            <i class="fa-solid fa-folder-tree mt-1 mr-2"></i>
+                            <span>título</span>
+                        </a>
+                    </td>
+                    <td class="min">
+                        <a href="{{route('colaboracao.projecto',$projecto->id)}}" class="text-success text-decoration-none d-flex tit">
+                            <i class="fa-solid fa-share mt-1 mr-2"></i>
+                            <span>colaboração</span>
+                        </a>
+                    </td>
                     <td class="min">
                         <a href="#" class="text-warning text-decoration-none d-flex act" data-bs-toggle="modal" data-bs-target="#modal-actualizacao"
                                     pro-id="{{$projecto->id}}" nome="{{$projecto->nome}}"
@@ -45,39 +57,38 @@
 </div>
 @isset($projectos)
 @if( $projectos->lastPage() > 1)
-<!--
 <nav>
     <ul class="pagination pagination-sm">
         @if($projectos->currentPage() - 1 >= 1)
-            <a class="page-link" href=#?page={{$projectos->currentPage()-1}}#table-titulo">
+            <a class="page-link" href="?page={{$projectos->currentPage()-1}}#table-projecto">
                 <i class="fa-solid fa-angles-left"></i>
             </a>
         @else
-            <a class="page-link" href=#?page={{$projectos->currentPage()}}#table-titulo">
+            <a class="page-link" href="?page={{$projectos->currentPage()}}#table-projecto">
                 <i class="fa-solid fa-angles-left"></i>
             </a>
         @endif
         @for($i = 1; $i <= $projectos->lastPage(); $i++)
           <li class="page-item">
             @if($i == $projectos->currentPage())
-                <a class="page-link active bg-primary text-white" href=#?page={{$i}}#table-titulo">{{$i}}</a>
+                <a class="page-link active bg-primary text-white" href="?page={{$i}}#table-projecto">{{$i}}</a>
             @else
-                <a class="page-link" href=#?page={{$i}}#table-titulo">{{$i}}</a>
+                <a class="page-link" href="?page={{$i}}#table-projecto">{{$i}}</a>
             @endif
           </li>
         @endfor
         @if($projectos->currentPage() + 1 < $projectos->lastPage())
-            <a class="page-link" href=#?page={{$projectos->currentPage() + 1}}#table-titulo">
+            <a class="page-link" href="?page={{$projectos->currentPage() + 1}}#table-projecto">
                 <i class="fa-solid fa-angles-right"></i>
             </a>
         @else
-            <a class="page-link" href=#?page={{$projectos->lastPage()}}#table-titulo">
+            <a class="page-link" href="?page={{$projectos->lastPage()}}#table-projecto">
                 <i class="fa-solid fa-angles-right"></i>
             </a>
         @endif
     </ul>
 </nav>
--->
+
 @endif
     @include('components.modal.update.projecto')
     @include('components.modal.delete.projecto')
