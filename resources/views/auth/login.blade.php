@@ -1,6 +1,6 @@
 @extends('layouts.default')
 @section('title','mografia/autenticação')
-@section('bg-body','class=bg-dark')
+@section('bg-body','class=bg-primary')
 @section('content')
 <section class="container m-auto w-50 top-20 mt-5 border rounded bg-light">
     <form method="POST" action="{{ route('login') }}"  class="p-2 m-2 ">
@@ -35,11 +35,11 @@
                 </button>
             </div>
             @if (Route::has('password.request'))
-                <a class="mt-4 ml-2" href="{{ route('password.request') }}">
+                <a class="mt-4 ml-2 text-decoration-none" href="{{ route('password.request') }}">
                     Esqueceste a senha?
                 </a>
                 <br/>
-                <a class="mt-4 ml-2" href="{{ route('home') }}">
+                <a class="mt-4 ml-2 text-decoration-none" href="{{ route('home') }}">
                    página inicial
                 </a>
             @endif

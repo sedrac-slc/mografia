@@ -15,20 +15,24 @@
 
     <div class="border-end bg-white" id="sidebar-wrapper">
         <div class="sidebar-heading border-bottom bg-light">
-            <a href="#">monografia</a>
+            <a href="#" class="text-decoration-none">monografia</a>
         </div>
         <div class="list-group list-group-flush">
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{route('painel.page','home')}}" id="home">
                 <i class="fa-solid fa-info"></i>
                 <span>Informações</span>
             </a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{route('painel.page','tema')}}" id="tema">
+                <i class="fa-solid fa-bars"></i>
+                <span>Temas</span>
+            </a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{route('painel.page','projecto')}}" id="projecto">
                 <i class="fa-solid fa-folder-open"></i>
                 <span>Projectos</span>
             </a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{route('painel.page','tema')}}" id="tema">
-                <i class="fa-solid fa-bars"></i>
-                <span>Temas</span>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{route('painel.page','indece')}}" id="indece">
+                <i class="fa-solid fa-book"></i>
+                <span>indece</span>
             </a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{route('painel.page','colaborador')}}" id="colaborador">
                 <i class="fa-solid fa-users"></i>

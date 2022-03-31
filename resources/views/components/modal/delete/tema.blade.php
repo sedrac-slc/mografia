@@ -12,16 +12,16 @@
                     @csrf
                     @method('DELETE')
                     <div class="modal-body text-center">
-                        <input type="hidden" class="cls" name="id" id="tema_id" value=""/>
+                        <input type="hidden" class="tema_id" name="id" value=""/>
                         <input type="hidden" name="user_id" value="{{Auth::user()->id}}"/>
-                        <input type="hidden" class="desc" name="descricao"/>
+                        <input type="hidden" name="descricao" class="descricao"/>
                         <div class="m-auto">
                             <div class="">
                                 <i class="fa-solid fa-info fa-4x p-4"></i>
                             </div>
                             <div class="mt-2 text-">
                                 <p>Queres apagar o tema?</p>
-                                <input class="form-control desc" style="text-align: center;" type="text"  disabled>
+                                <input type="text" class="form-control descricao text-center" disabled>
                             </div>
                         </div>
                     </div>

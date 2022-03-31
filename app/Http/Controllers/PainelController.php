@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\{
+    ColaboracaoProjectosController
+};
 use App\Components\ListTipoProjecto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,7 +17,7 @@ class PainelController extends Controller
     public function pages($page){
         switch($page){
             case "projecto":
-                $temas = DB::table('temas')->where('user_id',Auth::user()->id)->get();
+                $temas = DB::table('temas')->where('user_id',Auth::user()->id)->orderBy('id','DESC')->get();
                 $projectos = DB::table('projectos')
                                 ->join('temas','projectos.tema_id','=','temas.id')
                                 ->where('projectos.user_id',Auth::user()->id)
@@ -35,7 +38,10 @@ class PainelController extends Controller
             case "colaborador":
                 if(!$colaborador = DB::table('colaboradors')->where('user_id',Auth::user()->id)->first())
                     return view("fragments.painel.colaborador");
-                return view("fragments.painel.colaborador",compact('colaborador'));
+                $projectosColaboracao = ColaboracaoProjectosController::queryDefault($colaborador);
+                return view("fragments.painel.colaborador",compact('colaborador','projectosColaboracao'));
+            case "indece":
+                return view("fragments.painel.indece");
             default:
                 return view("dashboard");
         }

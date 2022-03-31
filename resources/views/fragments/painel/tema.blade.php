@@ -5,22 +5,18 @@
         @csrf
         @include('fragments.error')
         <input type="hidden" value="{{Auth::user()->id}}" name="user_id" id="user_id"/>
-        <h1 class="h5 text-muted">Novo tema</h1>
         <div class="input-group mb-3">
-            <input class="form-control" type="text" name="descricao" id="descricao" autocomplete="none" required/>
+            <input class="form-control" type="text" name="descricao" id="descricao" autocomplete="none" placeholder="Novo tema" required/>
             <div class="input-group-append">
                 <button type="submit" class="btn btn-primary">criar</button>
             </div>
         </div>
     </form>
     <section class="p-2 m-auto">
-        <h1 class="h5 text-muted">Listar</h1>
-        <hr/>
         @include('components.table.tema')
      </section>
 </section>
 @endsection
 @section('javascript-painel')
     <script src="{{asset('js/painel/tema.js')}}"></script>
-    <script src="{{asset('js/function.js')}}"></script>
 @endsection

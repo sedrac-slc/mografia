@@ -16,11 +16,13 @@ return new class extends Migration
         Schema::create('subtitulos', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('titulo_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->string('sub_descricao',100);
             $table->unique(['titulo_id','sub_descricao']);
             $table->integer('prioridade')->unsigned()->default(0);
-            $table->foreign('titulo_id')->references('id')->on('titulos')->onDelete('cascade');
             $table->timestamps();
+            $table->foreign('titulo_id')->references('id')->on('titulos')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

@@ -23,30 +23,37 @@
                         </div>
                     </div>
                     <section class="row g-3 p-2">
-                      <div class="col-md-6">
+                      <div class="col-md-4">
                         <label for="tema_id" class="form-label">
                             <i class="fa-solid fa-list"></i>
                             <span>Escolha o tema:</span>
                         </label>
-                        <select class="form-control tema_id" name="tema_id" id="">
+                        <select class="form-control tema" name="tema_id" id="">
                           @foreach($temas as $tema)
                             <option value="{{$tema->id}}">{{$tema->descricao}}</option>
                           @endforeach
                         </select>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-4">
                          <label for="nome" class="form-label">
                             <i class="fa-solid fa-file-signature"></i>
                             <span>Nome projecto:</span>
                           </label>
                           <input type="text" name="nome" value="{{old('nome')}}" class="form-control nome"  required/>
                       </div>
+                      <div class="col-md-4">
+                            <label for="orcamento" class="form-label">
+                               <i class="fa-solid fa-file-signature"></i>
+                               <span>orcamento:</span>
+                             </label>
+                             <input type="number" name="orcamento" value="{{old('orcamento')}}" class="form-control orcamento"  required/>
+                      </div>
                       <div class="col-md-3 mt-2">
                         <label for="acesso" class="form-label">
                             <i class="fa-solid fa-universal-access"></i>
                             <span>Acesso:</span>
                         </label>
-                        <select name="acesso" id="" class="form-select form-control acesso">
+                        <select name="acesso" class="form-select form-control acesso" id="acesso">
                             <option value="PUBLICO">Público</option>
                             <option value="PRIVADO">Privado</option>
                             <option value="PROTEGIDO">Protegido</option>
@@ -57,7 +64,7 @@
                                 <i class="fa-solid fa-folder-tree"></i>
                                 <span>Tipo:</span>
                         </label>
-                        <select name="tipo" id="" class="form-select form-control tipo">
+                        <select name="tipo" class="form-select form-control tipo" id="tipo">
                             @foreach($listTipo as $tipo)
                                <option value="{{$tipo->getCodigo()}}">{{$tipo->getDescricao()}}</option>
                             @endforeach

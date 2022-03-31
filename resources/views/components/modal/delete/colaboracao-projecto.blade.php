@@ -1,28 +1,26 @@
-<div class="modal fade" id="modal-delete-tema" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal-delete-tema-label" aria-hidden="true">
+<div class="modal fade" id="modal-delete-colaboracao" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal-delete-colaboracao-label" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-dark">
-                    <h5 class="modal-title text-white" id="modal-delete-tema-label">
-                          Subtitulo\apagar
+                    <h5 class="modal-title text-white" id="modal-delete-colaboracao-label">
+                          Colaboração\apagar
                     </h5>
                     <a class="btn-close text-danger h3" data-bs-dismiss="modal" aria-label="Close">
                     </a>
                 </div>
-                <form action="{{route('subtitulo.delete',$titulo->id)}}" method="POST">
+                <form action="{{route('colaboracao.delete')}}" method="POST">
                     @csrf
                     @method('DELETE')
+                    <input type="hidden" name="id" class="id" value=""/>
+                    <input type="hidden" name="projecto_id" class="projecto_id" value=""/>
+                    <input type="hidden" name="colaborador_id" class="colaborador_id" value=""/>
                     <div class="modal-body text-center">
-                        <input type="hidden" class="cls" name="id" value=""/>
-                        <input type="hidden" name="user_id" value="{{Auth::user()->id}}"/>
-                        <input type="hidden" name="titulo_id" value="{{$titulo->id}}"/>
-                        <input type="hidden" class="desc" name="sub_descricao"/>
                         <div class="m-auto">
                             <div class="">
                                 <i class="fa-solid fa-info fa-4x p-4"></i>
                             </div>
                             <div class="mt-2 text-">
-                                <p>Queres apagar o subtitulo?</p>
-                                <input class="form-control desc" style="text-align: center;" type="text"  disabled>
+                                <p>Queres apagar esta colaboração?</p>
                             </div>
                         </div>
                     </div>

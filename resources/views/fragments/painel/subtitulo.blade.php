@@ -5,7 +5,7 @@
         @csrf
         @include('fragments.error')
         <input type="hidden" value="{{$titulo->id}}" name="titulo_id" id="titulo_id"/>
-        <h1 class="h5 text-muted">Novo subtitulo</h1>
+        <input type="hidden" name="user_id" value="{{Auth::user()->id}}"/>
         <section class="row g-3 p-2">
             <div class="col-md-6 mt-2">
                 <div class="input-group">
@@ -37,5 +37,6 @@
 </section>
 @endsection
 @section('javascript-painel')
+    <script src="{{asset('js/painel/projecto.js')}}"></script>
     <script src="{{asset('js/function.js')}}"></script>
 @endsection

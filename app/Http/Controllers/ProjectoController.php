@@ -16,7 +16,7 @@ class ProjectoController extends Controller
 {
     private $tam = 5;
 
-    private function pro(){
+    private function queryDefault(){
         return DB::table('projectos')
                  ->join('temas','projectos.tema_id','=','temas.id')
                  ->where('projectos.user_id',Auth::user()->id)
@@ -28,7 +28,7 @@ class ProjectoController extends Controller
      public function titulo($id){
         if(!$projecto = Projecto::find($id))
             return redirect()->back();
-        $tema = DB::table('temas')->find($projecto->id);
+        $tema = DB::table('temas')->find($projecto->tema_id);
         $titulos = DB::table('titulos')->where('projecto_id',$projecto->id)
                     ->orderBy('id','DESC')
                     ->paginate($this->tam);
@@ -52,7 +52,7 @@ class ProjectoController extends Controller
       try{
             Projecto::create($request->all());
             $temas = DB::table('temas')->where('user_id',Auth::user()->id)->get();
-            $projectos = $this->pro();
+            $projectos = $this->queryDefault();
             $listTipo = ListTipoProjecto::all();
             $redirect = "projecto";
             return view('fragments.painel.projecto',compact('redirect','projectos','temas','listTipo'));
@@ -69,12 +69,13 @@ class ProjectoController extends Controller
 
     public function update(ProjectoRequest $request){
         try{
+            //dd($request->all());
             if(!$projecto = Projecto::find($request->id))
                 return redirect()->back();
-            $projectos = $this->pro();
             $listTipo = ListTipoProjecto::all();
             $projecto->update($request->all());
             $temas = DB::table('temas')->where('user_id',Auth::user()->id)->get();
+            $projectos = $this->queryDefault();
             $redirect = "projecto";
             return view('fragments.painel.projecto',compact('redirect','projectos','temas','listTipo'));
         }catch(QueryException $e){
@@ -95,7 +96,7 @@ class ProjectoController extends Controller
                 return redirect()->back();
             $projecto->delete();
             $temas = DB::table('temas')->where('user_id',Auth::user()->id)->get();
-            $projectos = $this->pro();
+            $projectos = $this->queryDefault();
             $listTipo = ListTipoProjecto::all();
             $redirect = "projecto";
             return view('fragments.painel.projecto',compact('redirect','projectos','temas','listTipo'));

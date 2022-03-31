@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ColaboracaoProjectos extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['projecto_id','colaborador_id'];
+
 }

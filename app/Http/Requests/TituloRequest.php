@@ -25,6 +25,7 @@ class TituloRequest extends FormRequest
     {
         return [
             'projecto_id' => ['required','regex:/\d+/u'],
+            'user_id' => ['required','regex:/\d+/u'],
             'descricao' => ['required','string'],
             'prioridade'
         ];

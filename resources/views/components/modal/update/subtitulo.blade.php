@@ -12,6 +12,7 @@
                 @csrf
                 @method('PUT')
                 <div class="modal-body">
+                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}"/>
                     <input type="hidden" class="cls" name="id" value=""/>
                     <input type="hidden" name="titulo_id" value="{{$titulo->id}}"/>
                     <div class="input-group mb-3">

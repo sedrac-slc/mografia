@@ -41,7 +41,8 @@ class TituloController extends Controller
             $titulos = DB::table('titulos')->where('projecto_id',$request->projecto_id)
                                            ->orderBy('id','DESC')
                                            ->paginate($this->tam);
-            return view('fragments.painel.titulo',compact('tema','projecto','titulos'));
+            $redirect = "projecto";
+            return view('fragments.painel.titulo',compact('tema','projecto','titulos','redirect'));
         }catch(QueryException $e){
             return view('layouts.error',[
                 'message' => "Verifica sé Titulo já não existe",
@@ -61,7 +62,8 @@ class TituloController extends Controller
                 $titulos = DB::table('titulos')->where('projecto_id',$projecto->id)
                                                ->orderBy('id','DESC')
                                                ->paginate($this->tam);
-                return view('fragments.painel.titulo',compact('tema','titulos','projecto'));
+                $redirect = "projecto";
+                return view('fragments.painel.titulo',compact('tema','titulos','projecto','redirect'));
             }
            return redirect()->back();
         }catch(QueryException $e){
@@ -84,7 +86,8 @@ class TituloController extends Controller
                 $titulos = DB::table('titulos')->where('projecto_id',$request->projecto_id)
                                              ->orderBy('id','DESC')
                                              ->paginate($this->tam);
-                return view('fragments.painel.titulo',compact('titulos','projecto','tema'));
+                $redirect = "projecto";
+                return view('fragments.painel.titulo',compact('titulos','projecto','tema','redirect'));
             }
             return redirect()->back();
       }catch(QueryException $e){

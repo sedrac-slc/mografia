@@ -68,7 +68,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/conteudo/subtitulo/{id}',[ParagrafoSubtituloController::class,'default'])->name('conteudo.subtitulo.page');
 
     Route::get('/painel/colaborador/{id}',[ColaboradorController::class,'insert'])->name('colaborador.insert');
+
     Route::get('/painel/colaboracao/projecto/{id}',[ColaboracaoProjectosController::class,'colaborar'])->name('colaboracao.projecto');
+    Route::post('/painel/colaboracao',[ColaboracaoProjectosController::class,'email'])->name('colaboracao.email');
+    Route::delete('/painel/colaboracao',[ColaboracaoProjectosController::class,'destroy'])->name('colaboracao.delete');
 });
 
 Route::get('/tema/json/{desc}',[TemaController::class,'elements']);

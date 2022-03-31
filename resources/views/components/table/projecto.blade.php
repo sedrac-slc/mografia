@@ -1,18 +1,19 @@
 <div style="overflow-x:auto;" class="">
 <table class="table table-borderless" id="table-projecto">
     <thead class="bg-primary  text-monospace">
-        <tr class="text-white">
+        <tr class="text-white text-center">
             <th colspan="2" class="text-center">Nome</th>
             <th colspan="4" class="text-center">Acção</th>
             <th>Tema</th>
             <th>Acesso</th>
             <th>Tipo</th>
+            <th>Orçamento</th>
         </tr>
     </thead>
-    <tbodyclass="bg-light">
+    <tbody class="bg-light">
         @isset($projectos)
             @foreach($projectos as $projecto)
-                <tr class="text-dark p-0">
+                <tr class="text-dark p-0 text-center">
                     <td class="min">
                         <input type="checkbox" class="form-check tema-check" name="" id="{{$projecto->id}}"/>
                     </td>
@@ -30,11 +31,16 @@
                         </a>
                     </td>
                     <td class="min">
-                        <a href="#" class="text-warning text-decoration-none d-flex act" data-bs-toggle="modal" data-bs-target="#modal-actualizacao"
-                                    pro-id="{{$projecto->id}}" nome="{{$projecto->nome}}"
+                        <a href="#" class="text-warning text-decoration-none d-flex projecto-up" data-bs-toggle="modal" data-bs-target="#modal-actualizacao"
+                                    value="{{$projecto->id}}"
+                                    tema="{{$projecto->tema_id}}"
+                                    nome="{{$projecto->nome}}"
                                     data-inicio="{{$projecto->data_inicio}}"
                                     data-fim="{{$projecto->data_fim}}"
-                                    pro-desc="{{$projecto->pro_descricao}}">
+                                    acesso="{{$projecto->acesso}}"
+                                    tipo="{{$projecto->tipo}}"
+                                    orcamento="{{$projecto->orcamento}}"
+                                    pro-descricao="{{$projecto->pro_descricao}}">
                             <i class="fa-solid fa-arrows-rotate mt-1 mr-2"></i>
                             <span>actuaização</span>
                         </a>
@@ -49,6 +55,7 @@
                     <td class="">{{$projecto->descricao}}</td>
                     <td class="min">{{$projecto->acesso}}</td>
                     <td class="min">{{$projecto->tipo}}</td>
+                    <td class="min">{{$projecto->orcamento}}</td>
                 </tr>
             @endforeach
         @endisset
@@ -57,7 +64,7 @@
 </div>
 @isset($projectos)
 @if( $projectos->lastPage() > 1)
-<nav>
+<nav class="mt-2">
     <ul class="pagination pagination-sm">
         @if($projectos->currentPage() - 1 >= 1)
             <a class="page-link" href="?page={{$projectos->currentPage()-1}}#table-projecto">

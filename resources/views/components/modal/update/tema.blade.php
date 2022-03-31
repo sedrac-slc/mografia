@@ -12,14 +12,14 @@
                 @csrf
                 @method('PUT')
                 <div class="modal-body">
-                    <input type="hidden" class="cls" name="id" id="tema_id" value=""/>
+                    <input type="hidden" name="id" id="tema_id" class="tema_id" value=""/>
                     <input type="hidden" name="user_id" id="user_id" value="{{Auth::user()->id}}"/>
                     <div class="input-group mb-3">
                         <label class="input-group-text bg-warning text-white" id="basic-addon1">
                             <i class="fa-solid fa-folder-open"></i>
                             <span class="ml-2">Tema:</span>
                         </label>
-                        <input type="text" class="form-control desc" name="descricao" id="descricaoid" value="" aria-describedby="basic-addon1" required/>
+                        <input type="text" class="form-control descricao" name="descricao" id="descricao" value="" aria-describedby="basic-addon1" required/>
                     </div>
                 </div>
                 <div class="modal-footer">

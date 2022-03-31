@@ -2,11 +2,11 @@
     <thead class="bg-primary text-monospace">
         <tr class="text-white">
             <th colspan="5">
-                Temas
+                Listar\temas
             </th>
         </tr>
     </thead>
-    <tbodyclass="bg-light">
+    <tbody class="bg-light">
         @isset($temas)
             @foreach($temas as $tema)
                 <tr class="text-dark p-0">
@@ -21,13 +21,13 @@
                         </a>
                     </td>
                     <td class="min">
-                        <a href="#" value="{{$tema->id}}" desc="{{$tema->descricao}}" class="text-warning text-decoration-none d-flex act" data-bs-toggle="modal" data-bs-target="#modal-actualizacao">
+                        <a href="#" value="{{$tema->id}}" descricao="{{$tema->descricao}}" class="text-warning text-decoration-none d-flex tema-act" data-bs-toggle="modal" data-bs-target="#modal-actualizacao">
                             <i class="fa-solid fa-arrows-rotate mt-1 mr-2"></i>
                             <span>actuaização</span>
                         </a>
                     </td>
                     <td class="min">
-                        <a href="#" value="{{$tema->id}}" desc="{{$tema->descricao}}" class="text-danger text-decoration-none d-flex act" data-bs-toggle="modal" data-bs-target="#modal-delete-tema">
+                        <a href="#" value="{{$tema->id}}" descricao="{{$tema->descricao}}" class="text-danger text-decoration-none d-flex tema-act" data-bs-toggle="modal" data-bs-target="#modal-delete-tema">
                             <i class="fa-solid fa-close mt-1 mr-2"></i>
                             <span>apagar</span>
                         </a>

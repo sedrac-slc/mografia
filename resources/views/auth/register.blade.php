@@ -96,8 +96,11 @@
                 <span>Cadastra</span>
             </button>
             <div class="mt-2">
-                <a class="" href="{{ route('login') }}">
+                <a class="text-decoration-none" href="{{ route('login') }}">
                     <span>Já tenho uma conta?</span>
+                </a><br/>
+                <a class="mt-4 ml-2 text-decoration-none" href="{{ route('home') }}">
+                    página inicial
                 </a>
             </div>
         </div>

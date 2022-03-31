@@ -10,6 +10,6 @@ class Titulo extends Model
     use HasFactory;
 
     protected $fillable = [
-        'projecto_id','descricao','prioridade'
+        'projecto_id','descricao','prioridade','user_id'
     ];
 }

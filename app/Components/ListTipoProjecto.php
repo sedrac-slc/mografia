@@ -13,7 +13,7 @@ class ListTipoProjecto extends ListGeneral{
             new ListTipoProjecto("MONOGRAFIA","Monográfia"),
             new ListTipoProjecto("REDACAO","Redação"),
             new ListTipoProjecto("ESCOLAR","Escolar"),
-            new ListTipoProjecto("REVISTA","Reista")
+            new ListTipoProjecto("REVISTA","Revista")
         ];
     }
 

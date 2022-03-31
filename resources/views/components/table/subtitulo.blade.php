@@ -1,21 +1,23 @@
 <table class="table table-borderless" id="">
     <thead class="bg-primary text-monospace">
-        <tr class="text-white">
-            <th colspan="5">
+        <tr class="text-white text-center">
+            <th colspan="2">
                 Subtitulos
             </th>
+            <th colspan="3">Acção</th>
+            <th>Prioridade</th>
         </tr>
     </thead>
-    <tbodyclass="bg-light">
+    <tbody class="bg-light">
         @isset($subtitulos)
             @foreach($subtitulos as $subtitulo)
-                <tr class="text-dark p-0">
+                <tr class="text-dark p-0 text-center">
                     <td class="min">
                         <input type="checkbox" class="form-check tema-check" name="" id="{{$subtitulo->id}}"/>
                     </td>
                     <td class="border-right border-left border-bottom">{{$subtitulo->sub_descricao}}</td>
                     <td class="min">
-                        <a href="{{route('conteudo.subtitulo.page',$subtitulo->id)}}" class="text-secondary text-decoration-none d-flex">
+                        <a href="{{route('conteudo.subtitulo.page',$subtitulo->id)}}" class="text-info text-decoration-none d-flex">
                             <i class="fa-solid fa-book mt-1 mr-2"></i>
                             <span>conteudo</span>
                         </a>
@@ -32,6 +34,7 @@
                             <span>apagar</span>
                         </a>
                     </td>
+                    <td>{{$titulo->prioridade}}</td>
                 </tr>
             @endforeach
         @endisset
