@@ -2,7 +2,11 @@
 @section('content-painel')
 <section class="container">
 @isset($temas)
-  <div class="p-2 border">
+  <button class="btn btn-primary mb-2" id="btn">
+      <i class="fa-solid fa-eye"></i>
+      <span>Oculta\Mostra</span>
+    </button>
+  <div class="p-2 border view" >
     <form action="{{route('tema.view.projecto')}}" method="POST">
         @csrf
         <input type="hidden" name="redirect" value="projecto"/>
@@ -20,7 +24,7 @@
         </div>
     </form>
   </div>
-  <hr/>
+  <hr class="view"/>
   @include('components.table.projecto')
 @endisset
 @endsection

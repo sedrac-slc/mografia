@@ -1,4 +1,7 @@
+//$('.view').fadeOut();
+
 const projecto = $('#projecto');
+
 projecto.ready(()=>{
     projecto.addClass('bg-primary text-white');
 });
@@ -30,4 +33,9 @@ den.on('mouseover',function(){
     const obj = $(this);
     $('.id-den').val(obj.attr('pro-id'));
     $('.nome-den').val(obj.attr('nome'));
+});
+
+const btn = $('#btn');
+btn.on('click',function(){
+    $('.view').delay(10).fadeToggle();
 });

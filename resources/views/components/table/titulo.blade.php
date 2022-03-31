@@ -1,14 +1,20 @@
+<div class="scroll">
 <table class="table table-borderless" id="table-titulo">
     <thead class="bg-primary text-monospace">
         <tr class="text-white text-center">
-            <th colspan="2">
+            <th class="bg-white">
+                <a class="text-decoration-none text-danger"  href="{{route('painel.page',$redirect)}}" data-toggle="tooltip" data-placement="bottom" title="voltar">
+                    <i class="fa-solid fa-angles-left"></i>
+                </a>
+            </th>
+            <th colspan="1">
                 Titulos
             </th>
             <th colspan="4">Acção</th>
             <th>Propriedade</th>
         </tr>
     </thead>
-    <tbodyclass="bg-light">
+    <tbodyclass="bg-white">
         @isset($titulos)
             @foreach($titulos as $titulo)
                 <tr class="text-dark p-0 text-center">
@@ -46,10 +52,10 @@
         @endisset
     </tbody>
 </table>
-
+</div>
 @isset($titulos)
 @if( $titulos->lastPage() > 1)
-<nav>
+<nav class="mt-1">
     <ul class="pagination pagination-sm">
         @if($titulos->currentPage() - 1 >= 1)
             <a class="page-link" href="{{route('projecto.titulo',$projecto->id)}}?page={{$titulos->currentPage()-1}}#table-titulo">

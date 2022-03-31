@@ -17,17 +17,17 @@
                     <input type="hidden" name="projecto_id" value="{{$projecto->id}}"/>
                     <div class="input-group mb-3">
                         <label class="input-group-text bg-warning text-white" id="basic-addon1">
-                            <i class="fa-solid fa-folder-open"></i>
+                            <i class="fa-solid fa-folder-tree"></i>
                             <span class="ml-2">titulo:</span>
                         </label>
-                        <input type="text" class="form-control desc" name="descricao" value="" aria-describedby="basic-addon1" required/>
+                        <input type="text" class="form-control desc" name="descricao" value="" required/>
                     </div>
                     <div class="input-group mb-3">
-                        <label class="input-group-text bg-warning text-white" id="basic-addon1">
-                                <i class="fa-solid fa-folder-open"></i>
-                                <span class="ml-2">prioridade:</span>
+                        <label class="input-group-text bg-warning text-white">
+                            <i class="fa-solid fa-list-ol"></i>
+                            <span class="ml-2">prior.:</span>
                         </label>
-                        <input type="number" class="form-control prec" name="prioridade" min="0" value="0" aria-describedby="basic-addon1" required/>
+                        <input type="number" class="form-control prec" name="prioridade" min="0" value="0" required/>
                     </div>
                 </div>
                 <div class="modal-footer">

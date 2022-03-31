@@ -7,14 +7,6 @@
         <p class="text-justfy text-indent">
             Bem vindo, ao painel de controlo, terás disponível todas funcionalidades do mografia.
         </p>
-        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
-        <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-            Popover on top
-        </button>
-        <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                Popover on top
-              </button>
-
     </article>
     <section class="ml-4">
         <div class="list-group" id="group-desc">

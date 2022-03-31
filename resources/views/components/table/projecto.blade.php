@@ -1,4 +1,4 @@
-<div style="overflow-x:auto;" class="">
+<div class="scroll">
 <table class="table table-borderless" id="table-projecto">
     <thead class="bg-primary  text-monospace">
         <tr class="text-white text-center">
@@ -10,7 +10,7 @@
             <th>Orçamento</th>
         </tr>
     </thead>
-    <tbody class="bg-light">
+    <tbody class="bg-white">
         @isset($projectos)
             @foreach($projectos as $projecto)
                 <tr class="text-dark p-0 text-center">

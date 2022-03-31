@@ -1,37 +1,38 @@
 @extends('layouts.painel')
 @section('content-painel')
-<section class="m-auto m-2 p-2" id="">
+<section class="m-auto m-2 p-1 align-center" id="">
     <form method="POST" action="{{route('titulo.create')}}" class="m-auto">
         @csrf
         @include('fragments.error')
         <input type="hidden" name="user_id" value="{{Auth::user()->id}}"/>
         <input type="hidden" value="{{$projecto->id}}" name="projecto_id" id=""/>
-        <section class="row g-3 p-2">
+        <section class="row g-3 p-2 ml-3">
             <div class="col-md-6 mt-2">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">Titulo</span>
                     <input class="form-control" type="text" name="descricao" id="descricao" autocomplete="none" required/>
                 </div>
             </div>
-            <div class="col-md-4 mt-2">
+            <div class="col-md-3 mt-2">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">prioridade</span>
                     <input class="form-control" type="number" name="prioridade" id="prioridade" min="0" value="0" autocomplete="none" required/>
                 </div>
             </div>
-            <div class="col-md-2 mt-2">
-               <input type="submit" class="btn btn-primary" value="cria"/>
+            <div class="col-md-3 mt-2 d-flex">
+               <input type="submit" class="btn btn-primary m-1" value="cria"/>
+               <button type="button" class="btn btn-secondary m-1" data-toggle="tooltip" data-placement="bottom"
+                        title="Projecto: {{$projecto->nome}}">
+                    <i class="fa-solid fa-folder-open"></i>
+               </button>
+               <button type="button" class="btn btn-secondary m-1" data-toggle="tooltip" data-placement="bottom"
+                       title="Tema: {{$tema->descricao}}">
+                    <i class="fa-solid fa-folder-tree"></i>
+                </button>
             </div>
         </section>
     </form>
-    <section class="p-2 m-auto">
-        <h6 class="text-muted">
-            <a class="text-decoration-none"  href="{{route('painel.page',$redirect)}}">
-                <i class="fa-solid fa-angles-left"></i>
-            </a>
-            <span>{{$tema->descricao}}\{{$projecto->nome}}</span>
-        </h6>
-        <hr/>
+    <section class="p-1 m-auto">
         @include('components.table.titulo')
      </section>
 </section>

@@ -41,7 +41,13 @@ class PainelController extends Controller
                 $projectosColaboracao = ColaboracaoProjectosController::queryDefault($colaborador);
                 return view("fragments.painel.colaborador",compact('colaborador','projectosColaboracao'));
             case "indece":
-                return view("fragments.painel.indece");
+                $projectos = DB::table('projectos')
+                    ->join('temas','temas.id','=','tema_id')
+                    ->where('projectos.user_id',Auth::user()->id)
+                    ->select('temas.descricao','projectos.nome','projectos.id')
+                    ->get();
+               // dd($projectos);
+                return view("fragments.painel.indece",compact('projectos'));
             default:
                 return view("dashboard");
         }

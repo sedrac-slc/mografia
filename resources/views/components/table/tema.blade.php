@@ -1,3 +1,4 @@
+<div class="scroll">
 <table class="table table-borderless" id="table-tema">
     <thead class="bg-primary text-monospace">
         <tr class="text-white">
@@ -6,7 +7,7 @@
             </th>
         </tr>
     </thead>
-    <tbody class="bg-light">
+    <tbody class="bg-white">
         @isset($temas)
             @foreach($temas as $tema)
                 <tr class="text-dark p-0">
@@ -70,6 +71,7 @@
         @endif
     </ul>
 </nav>
+</div>
 @endif
     @include('components.modal.update.tema')
     @include('components.modal.delete.tema')

@@ -1,14 +1,19 @@
+<div class="scroll">
 <table class="table table-borderless" id="">
     <thead class="bg-primary text-monospace">
         <tr class="text-white text-center">
-            <th colspan="2">
-                Subtitulos
+            <th class="bg-white">
+                <a class="text-decoration-none text-danger"  href="{{route('projecto.titulo',$titulo->projecto_id)}}"
+                   data-toggle="tooltip" data-placement="bottom" title="voltar">
+                    <i class="fa-solid fa-angles-left"></i>
+                </a>
             </th>
+            <th colspan="1">Subtitulos</th>
             <th colspan="3">Acção</th>
             <th>Prioridade</th>
         </tr>
     </thead>
-    <tbody class="bg-light">
+    <tbody class="bg-white">
         @isset($subtitulos)
             @foreach($subtitulos as $subtitulo)
                 <tr class="text-dark p-0 text-center">
@@ -34,15 +39,16 @@
                             <span>apagar</span>
                         </a>
                     </td>
-                    <td>{{$titulo->prioridade}}</td>
+                    <td>{{$subtitulo->prioridade}}</td>
                 </tr>
             @endforeach
         @endisset
     </tbody>
 </table>
+</div>
 @isset($subtitulos)
 @if( $subtitulos->lastPage() > 1)
-<nav>
+<nav class="mt-2">
     <ul class="pagination pagination-sm">
         @if($subtitulos->currentPage() - 1 >= 1)
             <a class="page-link" href="{{route('subtitulo.page',$titulo->id)}}?page={{$subtitulos->currentPage()-1}}#table-titulo">
