@@ -7,6 +7,7 @@ use App\Http\Requests\TituloRequest;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\QueryException;
 
 class TituloController extends Controller
@@ -97,6 +98,16 @@ class TituloController extends Controller
                 'redirect' => "projecto"
             ]);
         }
+    }
+
+    public function store_json(Request $request){
+        $titulo = Titulo::create([
+            'user_id' => Auth::user()->id,
+            'projecto_id' => $request->projecto_id,
+            'descricao' => $request->descricao,
+            'prioridade' => $request->prioridade
+        ]);
+        return response()->json($titulo);
     }
 
 }

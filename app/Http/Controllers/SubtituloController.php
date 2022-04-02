@@ -7,6 +7,7 @@ use App\Http\Requests\SubtituloRequest;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\QueryException;
 
 class SubtituloController extends Controller
@@ -79,4 +80,16 @@ class SubtituloController extends Controller
             ]);
         }
     }
+
+    public function store_json(Request $request){
+        $subtitulo = Subtitulo::create([
+            'user_id' => Auth::user()->id,
+            'titulo_id' => $request->titulo_id,
+            'sub_descricao' => $request->sub_descricao,
+            'prioridade' => $request->prioridade
+        ]);
+        return response()->json($subtitulo);
+        //return response()->json($request->all());
+    }
+
 }

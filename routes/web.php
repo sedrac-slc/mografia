@@ -53,6 +53,9 @@ Route::middleware('auth')->group(function () {
     Route::put('/painel/titulo',[TituloController::class,'update'])->name('titulo.update');
     Route::delete('/painel/titulo',[TituloController::class,'destroy'])->name('titulo.delete');
 
+    Route::post('/painel/titulo/json/add',[TituloController::class,'store_json'])->name('titulo.store.json');
+    Route::post('/painel/subtitulo/json/add',[SubtituloController::class,'store_json'])->name('subtitulo.store.json');
+
     Route::get('/painel/subtitulo/{id}',[SubtituloController::class,'default'])->name('subtitulo.page');
     Route::post('/painel/subtitulo',[SubtituloController::class,'store'])->name('subtitulo.create');
     Route::put('/painel/subtitulo',[SubtituloController::class,'update'])->name('subtitulo.update');
@@ -73,6 +76,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/painel/colaboracao',[ColaboracaoProjectosController::class,'email'])->name('colaboracao.email');
     Route::delete('/painel/colaboracao',[ColaboracaoProjectosController::class,'destroy'])->name('colaboracao.delete');
 });
+
 
 Route::get('/tema/json/{desc}',[TemaController::class,'elements']);
 Route::get('/municipio/json/{id}',[MunicipioController::class,'elements']);
