@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('titulo_id')->unsigned();
             $table->bigInteger('user_id')->unsigned();
-            $table->string('sub_descricao',100);
-            $table->unique(['titulo_id','sub_descricao']);
+            $table->string('descricao',100);
+            $table->unique(['titulo_id','descricao']);
             $table->integer('prioridade')->unsigned()->default(0);
             $table->timestamps();
             $table->foreign('titulo_id')->references('id')->on('titulos')->onDelete('cascade');

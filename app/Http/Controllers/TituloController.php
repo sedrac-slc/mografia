@@ -110,4 +110,18 @@ class TituloController extends Controller
         return response()->json($titulo);
     }
 
+    public function destroy_json($id){
+        if(!$titulo = Titulo::find($id))
+            return response()->json(["delete" => false]);
+        $titulo->delete();
+        return response()->json(["delete" => true]);
+    }
+
+    public function update_json(Request $request){
+        if(!$titulo = Titulo::find($request->id))
+           return response()->json(["udpate" => false]);
+        $titulo->update($request->all());
+        return response()->json($titulo);
+    }
+
 }

@@ -85,11 +85,24 @@ class SubtituloController extends Controller
         $subtitulo = Subtitulo::create([
             'user_id' => Auth::user()->id,
             'titulo_id' => $request->titulo_id,
-            'sub_descricao' => $request->sub_descricao,
+            'descricao' => $request->descricao,
             'prioridade' => $request->prioridade
         ]);
         return response()->json($subtitulo);
-        //return response()->json($request->all());
+    }
+
+    public function destroy_json($id){
+        if(!$subtitulo = Subtitulo::find($id))
+            return response()->json(["delete" => false]);
+        $subtitulo->delete();
+        return response()->json(["delete" => true]);
+    }
+
+    public function update_json(Request $request){
+        if(!$subtitulo = Subtitulo::find($request->id))
+           return response()->json(["udpate" => false]);
+        $subtitulo->update($request->all());
+        return response()->json($subtitulo);
     }
 
 }

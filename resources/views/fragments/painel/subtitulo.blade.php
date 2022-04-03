@@ -10,7 +10,7 @@
             <div class="col-md-6 mt-1">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">Subtitulo</span>
-                    <input class="form-control" type="text" name="sub_descricao" id="descricao" autocomplete="none" required/>
+                    <input class="form-control" type="text" name="descricao" id="descricao" autocomplete="none" required/>
                 </div>
             </div>
             <div class="col-md-4 mt-1">

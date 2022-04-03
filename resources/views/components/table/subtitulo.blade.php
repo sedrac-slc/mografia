@@ -20,7 +20,7 @@
                     <td class="min">
                         <input type="checkbox" class="form-check tema-check" name="" id="{{$subtitulo->id}}"/>
                     </td>
-                    <td class="border-right border-left border-bottom">{{$subtitulo->sub_descricao}}</td>
+                    <td class="border-right border-left border-bottom">{{$subtitulo->descricao}}</td>
                     <td class="min">
                         <a href="{{route('conteudo.subtitulo.page',$subtitulo->id)}}" class="text-info text-decoration-none d-flex">
                             <i class="fa-solid fa-book mt-1 mr-2"></i>
@@ -28,13 +28,13 @@
                         </a>
                     </td>
                     <td class="min">
-                        <a href="{{route('subtitulo.page',$subtitulo->id)}}" value="{{$subtitulo->id}}" desc="{{$subtitulo->sub_descricao}}" prec="{{$subtitulo->prioridade}}" class="text-warning text-decoration-none d-flex act" data-bs-toggle="modal" data-bs-target="#modal-actualizacao">
+                        <a href="{{route('subtitulo.page',$subtitulo->id)}}" value="{{$subtitulo->id}}" desc="{{$subtitulo->descricao}}" prec="{{$subtitulo->prioridade}}" class="text-warning text-decoration-none d-flex act" data-bs-toggle="modal" data-bs-target="#modal-actualizacao">
                             <i class="fa-solid fa-arrows-rotate mt-1 mr-2"></i>
                             <span>actuaização</span>
                         </a>
                     </td>
                     <td class="min">
-                        <a href="{{route('subtitulo.page',$subtitulo->id)}}" value="{{$subtitulo->id}}" desc="{{$subtitulo->sub_descricao}}" class="text-danger text-decoration-none d-flex act" data-bs-toggle="modal" data-bs-target="#modal-delete-tema">
+                        <a href="{{route('subtitulo.page',$subtitulo->id)}}" value="{{$subtitulo->id}}" desc="{{$subtitulo->descricao}}" class="text-danger text-decoration-none d-flex act" data-bs-toggle="modal" data-bs-target="#modal-delete-tema">
                             <i class="fa-solid fa-close mt-1 mr-2"></i>
                             <span>apagar</span>
                         </a>

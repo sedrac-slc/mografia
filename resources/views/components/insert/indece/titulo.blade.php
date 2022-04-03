@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="d-flex">
-            <button class="btn btn-primary" id="btn-titulo" type="button">
+            <button class="btn btn-primary" id="btn-titulo" type="button" value="add">
                 <span class="d-flex">
                     <i class="fa-solid fa-plus mt-1"></i>
                     <span class="ml-1">add</span>

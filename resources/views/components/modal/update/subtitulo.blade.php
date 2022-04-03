@@ -20,7 +20,7 @@
                             <i class="fa-solid fa-folder-tree"></i>
                             <span class="ml-2">Subtitulo:</span>
                         </label>
-                        <input type="text" class="form-control desc" name="sub_descricao" value="" aria-describedby="basic-addon1" required/>
+                        <input type="text" class="form-control desc" name="descricao" value="" aria-describedby="basic-addon1" required/>
                     </div>
                     <div class="input-group mb-3">
                         <label class="input-group-text bg-warning text-white" id="basic-addon1">

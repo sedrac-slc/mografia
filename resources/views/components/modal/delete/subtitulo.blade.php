@@ -15,7 +15,7 @@
                         <input type="hidden" class="cls" name="id" value=""/>
                         <input type="hidden" name="user_id" value="{{Auth::user()->id}}"/>
                         <input type="hidden" name="titulo_id" value="{{$titulo->id}}"/>
-                        <input type="hidden" class="desc" name="sub_descricao"/>
+                        <input type="hidden" class="desc" name="descricao"/>
                         <div class="m-auto">
                             <div class="">
                                 <i class="fa-solid fa-info fa-4x p-4"></i>
