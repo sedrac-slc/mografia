@@ -1,7 +1,7 @@
 @extends('layouts.default')
 @section('bg-body','class=bg-primary')
 @section('javascript')
-    <script src="{{asset('js/produto.formulario.js')}}"></script>
+    <script src="{{asset('js/produto/produto.formulario.js')}}"></script>
 @endsection
 @section('content')
 @include('components.insert.nav-painel')

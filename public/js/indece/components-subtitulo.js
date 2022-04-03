@@ -1,6 +1,6 @@
 var contadorSubtitulo = 0;
 
-function conteudoSub(titulo,subtitulo){
+function buildDivSubtitulo(titulo,subtitulo){
     return `<div class="mt-1 ml-2" id="subtitulo-${subtitulo.id}">
     <div class="d-flex">
         <a class="btn btn-danger text-white text-decoration-none mr-1" id="btn-sub-del-${subtitulo.id}" data-toggle="tooltip" data-placement="bottom" title="eliminar"
@@ -16,8 +16,8 @@ function conteudoSub(titulo,subtitulo){
         <a href="#" class="btn btn-info text-white text-decoration-none mr-1" data-toggle="tooltip" data-placement="bottom" title="${subtitulo.prioridade}">
             <i class="fa fa-eye"></i>
         </a>
-        <input class="form-control sub-conteudo-${titulo} text-center w-75" id="input-sub-descricao-${subtitulo.id}" value="${subtitulo.descricao}" readonly/>
-        <input class="form-control text-center w-25" id="input-sub-prioridade-${subtitulo.id}" value="${subtitulo.prioridade}" readonly/>
+        <input class="form-control sub-conteudo-${titulo} w-75" id="input-sub-descricao-${subtitulo.id}" value="${subtitulo.descricao}" readonly/>
+        <input class="form-control w-25" id="input-sub-prioridade-${subtitulo.id}" value="${subtitulo.prioridade}" readonly/>
     </div>
 </div>`;
 }
@@ -39,7 +39,7 @@ function divSubtitulo(titulo){
         if(params.descricao.length > 0){
             $.post(url, params, function(response){
                 if(response != null){
-                   painel.append(conteudoSub(titulo,response));
+                   painel.append(buildDivSubtitulo(titulo,response));
                   contadorSubtitulo++;
                 }
             }).fail(function() {
@@ -95,8 +95,8 @@ function divTitulo(titulo){
         <a href="#" class="btn btn-info text-white text-decoration-none mr-1" data-toggle="tooltip" data-placement="bottom" title="${titulo.prioridade}">
             <i class="fa fa-eye"></i>
         </a>
-        <input class="form-control tit-conteudo w-75 text-center" value="${titulo.descricao}" id="input-tit-descricao-${titulo.id}" readonly/>
-        <input class="form-control w-25 text-center" id="input-tit-prioridade-${titulo.id}" value="${titulo.prioridade}" readonly/>
+        <input class="form-control tit-conteudo w-75" value="${titulo.descricao}" id="input-tit-descricao-${titulo.id}" readonly/>
+        <input class="form-control w-25" id="input-tit-prioridade-${titulo.id}" value="${titulo.prioridade}" readonly/>
     </div>`
         +formSubtitulo(titulo)+
    `<div class="ml-5" id="subtitulo-lista-${titulo.id}"> </div>

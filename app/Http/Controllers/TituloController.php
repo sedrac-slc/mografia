@@ -124,4 +124,8 @@ class TituloController extends Controller
         return response()->json($titulo);
     }
 
+    public function list_json($id){
+        return response()->json(Titulo::where('projecto_id',$id)->get());
+    }
+
 }

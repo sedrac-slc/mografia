@@ -33,10 +33,12 @@
 <input type="hidden" id="url-add-titulo" value="{{route('titulo.store.json')}}"/>
 <input type="hidden" id="url-del-titulo" value="{{route('titulo.delete.json','param')}}"/>
 <input type="hidden" id="url-upd-titulo" value="{{route('titulo.update.json')}}"/>
+<input type="hidden" id="url-lis-titulo" value="{{route('titulo.list.json','parm')}}"/>
 
 <input type="hidden" id="url-add-subtitulo" value="{{route('subtitulo.store.json')}}"/>
 <input type="hidden" id="url-del-subtitulo" value="{{route('subtitulo.delete.json','param')}}"/>
 <input type="hidden" id="url-upd-subtitulo" value="{{route('subtitulo.update.json')}}"/>
+<input type="hidden" id="url-lis-subtitulo" value="{{route('subtitulo.list.json','parm')}}"/>
 
 @include('components.modal.update.indece.form')
 @include('components.modal.delete.indece.form')
@@ -46,4 +48,5 @@
 
     <script src="{{asset('js/indece/components-subtitulo.js')}}"></script>
     <script src="{{asset('js/indece/components-titulo.js')}}"></script>
+    <script src="{{asset('js/indece/default.js')}}"></script>
 @endsection

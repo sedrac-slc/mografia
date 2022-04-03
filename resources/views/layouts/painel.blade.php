@@ -37,14 +37,14 @@
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{route('painel.page','colaborador')}}" id="colaborador">
                 <i class="fa-solid fa-users"></i>
                 <span>Colaboladores</span>
-            </a>{{--
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#">
-                <i class="fa-solid fa-money-bill-wave"></i>
-                <span>Pagamento</span>
-            </a>--}}
+            </a>
            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{route('painel.page','conta')}}" id="conta">
                 <i class="fa-solid fa-user"></i>
                 <span>Conta</span>
+            </a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#">
+                <i class="fa-solid fa-money-bill-wave"></i>
+                <span>Pagamento</span>
             </a>
         </div>
     </div>

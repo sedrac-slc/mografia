@@ -105,4 +105,8 @@ class SubtituloController extends Controller
         return response()->json($subtitulo);
     }
 
+    public function list_json($id){
+        return response()->json(Subtitulo::where('titulo_id',$id)->get());
+    }
+
 }
