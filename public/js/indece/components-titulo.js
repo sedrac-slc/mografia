@@ -57,6 +57,13 @@ function ocultarSubtitulo(id){
     none(obj);
 }
 
+function ocultarTodosSubtitulos(id){
+    const lista = $('.subtitulo-div-'+id);
+    lista.each(index=>{
+        none($('#'+lista[index].id));
+    });
+}
+
 const btnDel = $('#btn-del');
 
 function eliminarTitulo(id){

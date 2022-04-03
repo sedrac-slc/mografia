@@ -1,10 +1,5 @@
 @extends('layouts.painel')
 @section('css-painel')
-<style>
- .cursor-pointer{
-     cursor: pointer;
- }
-</style>
 @endsection
 @section('content-painel')
 <section class="container m-auto">
@@ -23,10 +18,11 @@
             </div>
             @include('components.insert.indece.titulo')
         </section>
-        <div class="mt-3" id="titulo-lista">
+        <div class="scroll-y">
+            <div class="mt-3" id="titulo-lista">
 
+            </div>
         </div>
-
     @endisset
 </section>
 

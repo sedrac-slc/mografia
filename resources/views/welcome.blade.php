@@ -44,7 +44,7 @@
     </div>
   </nav>
 
-  <section class="container w-75 mt-4 border bg-white">
+  <section class="container w-75 mt-4 border bg-white text-dark">
 
     <section class="m-2 p-2">
         <article>
@@ -77,7 +77,7 @@
     <div class="mt-1 mb-4 text-center">
         @if (Route::has('login'))
             @auth
-                <a href="{{ route('painel') }}" class=" text-decoration-none">
+                <a href="{{ route('painel') }}" class="text-decoration-none text-dark">
                         <i class="fa-solid fa-panel-ews"></i>
                     <span>Painel</span>
                 </a>

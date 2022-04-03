@@ -1,6 +1,11 @@
 
 /*.min{  padding: 0%; margin: 0%;}*/
 
+.scroll-y{
+    overflow-y: scroll;
+    padding-left:2px;
+}
+
 .scroll{
     overflow-x: scroll;
     scrollbar-arrow-color: #8070d4;
@@ -9,7 +14,7 @@
     scrollbar-color: rgb(28, 28, 145) rgb(175, 166, 166);
 }
 
-.scroll::-webkit-scrollbar {
+.scroll::-webkit-scrollbar{
     width: 10px;
 }
 
