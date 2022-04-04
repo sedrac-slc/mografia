@@ -17,9 +17,11 @@
         <i class="fa-solid fa-angles-left"></i>
         <span>voltar</span>
     </a>
-    <form method="POST" action="{{ route('register') }}" class="p-3">
-         @csrf
+    <form method="POST" action="{{route('register.user')}}" class="p-3">
+        {{ csrf_field() }}
          @include('fragments.error')
+       <input type="hidden" name="provider" value="mografia"/>
+       <input type="hidden" name="provider_id" value="null"/>
        <section class="row g-3">
         <div class="col-md-6">
             <label for="nome_completo" class="form-label">

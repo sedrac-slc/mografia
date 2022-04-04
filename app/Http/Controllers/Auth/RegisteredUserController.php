@@ -33,10 +33,15 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
+
+     public function oi(Request $request)
+     {
+        dd($request->all());
+     }
+
     public function store(Request $request)
     {
-        try{
-
+    try{
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -62,8 +67,7 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         return view('dashboard');
-
-        }catch(QueryException $e){
+     }catch(QueryException $e){
             return view('layouts.error',[
                 'message' => "Não possível criar este usuário",
                 'descricao' =>  "$request->nome_completo",
