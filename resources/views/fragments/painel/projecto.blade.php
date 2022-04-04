@@ -30,5 +30,5 @@
 @endsection
 @section('javascript-painel')
     <script src="{{asset('js/painel/projecto.js')}}"></script>
-    <script src="{{asset('js/produto.formulario.js')}}"></script>
+    <script src="{{asset('js/produto/produto.formulario.js')}}"></script>
 @endsection

@@ -24,7 +24,8 @@ class User extends Authenticatable
         'nome_completo',
         'genero',
         'telefone',
-        'data_nascimento'
+        'data_nascimento',
+        'provider','provider_id'
     ];
 
     /**

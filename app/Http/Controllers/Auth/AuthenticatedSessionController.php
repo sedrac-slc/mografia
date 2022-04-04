@@ -11,6 +11,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\QueryException;
 
+use Laravel\Socialite\Facades\Socialite;
+
 class AuthenticatedSessionController extends Controller
 {
     /**
@@ -62,4 +64,15 @@ class AuthenticatedSessionController extends Controller
 
         return redirect('/');
     }
+
+
+    public function redirectToProvider($provider){
+        return Socialite::driver($provider)->redirect();
+    }
+
+    public function handleProviderCallback($provider){
+        $userProvider = Socialite::driver($provider)->stateless()->user();
+        dd($userProvider);
+    }
+
 }

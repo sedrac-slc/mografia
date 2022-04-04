@@ -65,6 +65,12 @@
                     </div>
                 </div>
                 <div class="col m-1">
+                    <a class="text-center text-decoration-none" href="{{route('social.login','gitHub')}}">
+                        <i class="fa-brands fa-github fa-3x"></i>
+                        <p>GitHub</p>
+                    </a>
+                </div>
+                <div class="col m-1">
                     <div class="text-center">
                         <i class="fa-brands fa-facebook fa-3x"></i>
                         <p>Facebook</p>
