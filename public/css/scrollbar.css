@@ -1,11 +1,6 @@
 
 /*.min{  padding: 0%; margin: 0%;}*/
 
-.scroll-y{
-    overflow-y: scroll;
-    padding-left:2px;
-}
-
 .scroll{
     overflow-x: scroll;
     scrollbar-arrow-color: #8070d4;

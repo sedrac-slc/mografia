@@ -18,6 +18,7 @@ class TituloController extends Controller
         if(!$titulo = DB::table('titulos')->find($id))
             return redirect()->back();
         $subtitulos = DB::table('subtitulos')->where('titulo_id',$titulo->id)
+                                         ->where('user_id',Auth::user()->id)
                                          ->orderBy('id','DESC')
                                          ->paginate($this->tam);
         return view('fragments.painel.subtitulo',compact('titulo','subtitulos'));
@@ -27,6 +28,7 @@ class TituloController extends Controller
         if(!$tema = DB::table('temas')->find($id))
             return redirect()->back();
         $titulos = DB::table('titulos')->where('tema_id',$tema->id)
+                                       ->where('user_id',Auth::user()->id)
                                        ->orderBy('id','DESC')
                                        ->paginate($this->tam);
         $redirect = "tema";
@@ -40,6 +42,7 @@ class TituloController extends Controller
             Titulo::create($request->all());
             $tema = DB::table('temas')->find($projecto->tema_id);
             $titulos = DB::table('titulos')->where('projecto_id',$request->projecto_id)
+                                           ->where('user_id',Auth::user()->id)
                                            ->orderBy('id','DESC')
                                            ->paginate($this->tam);
             $redirect = "projecto";
@@ -61,6 +64,7 @@ class TituloController extends Controller
                 $tema = DB::table('temas')->find($projecto->tema_id);
                 $titulo->update($request->all());
                 $titulos = DB::table('titulos')->where('projecto_id',$projecto->id)
+                                               ->where('user_id',Auth::user()->id)
                                                ->orderBy('id','DESC')
                                                ->paginate($this->tam);
                 $redirect = "projecto";
@@ -85,6 +89,7 @@ class TituloController extends Controller
                 $tema = DB::table('temas')->find($projecto->tema_id);
                 $titulo->delete();
                 $titulos = DB::table('titulos')->where('projecto_id',$request->projecto_id)
+                                             ->where('user_id',Auth::user()->id)
                                              ->orderBy('id','DESC')
                                              ->paginate($this->tam);
                 $redirect = "projecto";

@@ -30,6 +30,7 @@ class ProjectoController extends Controller
             return redirect()->back();
         $tema = DB::table('temas')->find($projecto->tema_id);
         $titulos = DB::table('titulos')->where('projecto_id',$projecto->id)
+                    ->where('user_id',Auth::user()->id)
                     ->orderBy('id','DESC')
                     ->paginate($this->tam);
         $redirect = "projecto";

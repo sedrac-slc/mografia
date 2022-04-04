@@ -48,7 +48,7 @@ class ColaboracaoProjectosController extends Controller
                             'projecto_id' => $projecto->id,
                             'colaborador_id'=> $colaborador->id
                         ]);
-                        $projectosColaboracao = ColaboracaoProjectosController::queryDefault($colaboracao);
+                        $projectosColaboracao = ColaboracaoProjectosController::queryDefault($colaborador);
                         return view("fragments.painel.colaborador",compact('colaborador','projectosColaboracao'));
                     }
                     return view('layouts.warning',[

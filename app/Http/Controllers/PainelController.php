@@ -24,7 +24,7 @@ class PainelController extends Controller
                                 ->select('projectos.*','tema_id','nome','temas.descricao')
                                 ->orderBy('projectos.id','DESC')
                                 ->paginate($this->tam);
-                $listTipo= ListTipoProjecto::all();
+                                dd($projectos->all());
                 return view("fragments.painel.projecto",compact('temas','projectos','listTipo'));
             case "tema":
                 $temas = DB::table('temas')->where('user_id',Auth::user()->id)

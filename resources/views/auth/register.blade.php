@@ -18,7 +18,7 @@
         <span>voltar</span>
     </a>
     <form method="POST" action="{{route('register.user')}}" class="p-3">
-        {{ csrf_field() }}
+        @csrf
          @include('fragments.error')
        <input type="hidden" name="provider" value="mografia"/>
        <input type="hidden" name="provider_id" value="null"/>

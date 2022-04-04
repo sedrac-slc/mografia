@@ -18,6 +18,7 @@ class SubtituloController extends Controller
         if(!$titulo = DB::table('titulos')->find($id))
             return redirect()->back();
         $subtitulos = DB::table('subtitulos')->where('titulo_id',$titulo->id)
+                                         ->where('user_id',Auth::user()->id)
                                          ->orderBy('id','DESC')
                                          ->paginate($this->tam);
         return view('fragments.painel.subtitulo',compact('titulo','subtitulos'));
@@ -28,6 +29,7 @@ class SubtituloController extends Controller
             Subtitulo::create($request->all());
             $titulo = DB::table('titulos')->find($request->titulo_id);
             $subtitulos = DB::table('subtitulos')->where('titulo_id',$request->titulo_id)
+                                             ->where('user_id',Auth::user()->id)
                                              ->orderBy('id','DESC')
                                              ->paginate($this->tam);
             return view('fragments.painel.subtitulo',compact('titulo','subtitulos'));
@@ -48,6 +50,7 @@ class SubtituloController extends Controller
             $titulo = DB::table('titulos')->find($request->titulo_id);
             $subtitulo->update($request->all());
             $subtitulos = DB::table('subtitulos')->where('titulo_id',$request->titulo_id)
+                                             ->where('user_id',Auth::user()->id)
                                              ->orderBy('id','DESC')
                                              ->paginate($this->tam);
             return view('fragments.painel.subtitulo',compact('titulo','subtitulos'));
@@ -68,6 +71,7 @@ class SubtituloController extends Controller
             $titulo = DB::table('titulos')->find($request->titulo_id);
             $subtitulo->delete();
             $subtitulos = DB::table('subtitulos')->where('titulo_id',$request->titulo_id)
+                                             ->where('user_id',Auth::user()->id)
                                              ->orderBy('id','DESC')
                                              ->paginate($this->tam);
             return view('fragments.painel.subtitulo',compact('titulo','subtitulos'));

@@ -18,7 +18,7 @@
             </div>
             @include('components.insert.indece.titulo')
         </section>
-        <div class="scroll-y">
+        <div class="">
             <div class="mt-3" id="titulo-lista">
 
             </div>
