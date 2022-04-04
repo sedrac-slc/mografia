@@ -14,7 +14,7 @@
             <th>Propriedade</th>
         </tr>
     </thead>
-    <tbodyclass="bg-white">
+    <tbody class="bg-white">
         @isset($titulos)
             @foreach($titulos as $titulo)
                 <tr class="text-dark p-0 text-center">
