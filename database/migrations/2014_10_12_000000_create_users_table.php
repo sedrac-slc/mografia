@@ -23,7 +23,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password',255)->nullable();
             $table->string('telefone',30)->unique();
-            $table->date('data_nascimento');
+            $table->date('data_nascimento')->nullable();
             $table->enum('genero',['MASCULINO','FEMENINO'])->default('MASCULINO');
             $table->enum('type',['SUPER','ADMIN','USER'])->default('USER');
             $table->rememberToken();

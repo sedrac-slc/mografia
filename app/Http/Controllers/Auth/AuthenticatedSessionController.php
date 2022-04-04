@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\User;
 use App\Components\Html\ListDashNav;
 
 use App\Http\Controllers\Controller;
@@ -72,7 +73,13 @@ class AuthenticatedSessionController extends Controller
 
     public function handleProviderCallback($provider){
         $userProvider = Socialite::driver($provider)->stateless()->user();
-        dd($userProvider);
+        $user = User::firstOrCreate(['email'=>$userProvider->getEmail()],[
+           "provider"=>$provider,
+           "provider_id"=>$userProvider->getId(),
+           "name"=>$userProvider->getName() ?? $userProvider->getNickname()
+        ]);
+        Auth::login($user);
+        return view('dashboard');
     }
 
 }

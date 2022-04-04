@@ -59,22 +59,22 @@
             <hr/>
             <div class="row">
                 <div class="col m-1">
-                    <div class="text-center">
+                    <a class="text-center text-decoration-none" href="{{route('social.login','google')}}">
                         <i class="fa-brands fa-google fa-3x"></i>
                         <p>Google</p>
-                    </div>
+                    </a>
                 </div>
                 <div class="col m-1">
-                    <a class="text-center text-decoration-none" href="{{route('social.login','gitHub')}}">
+                    <a class="text-center text-decoration-none" href="{{route('social.login','github')}}">
                         <i class="fa-brands fa-github fa-3x"></i>
                         <p>GitHub</p>
                     </a>
                 </div>
                 <div class="col m-1">
-                    <div class="text-center">
+                    <a class="text-center text-decoration-none" href="{{route('social.login','facebook')}}">
                         <i class="fa-brands fa-facebook fa-3x"></i>
                         <p>Facebook</p>
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
