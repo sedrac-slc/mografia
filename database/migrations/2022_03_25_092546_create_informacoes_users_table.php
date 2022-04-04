@@ -19,7 +19,7 @@ return new class extends Migration
             $table->bigInteger('nacionalidade_id')->unsigned();
             $table->bigInteger('provincia_id')->unsigned();
             $table->bigInteger('municipio_id')->unsigned();
-            $table->enum('estado_civil',['CASADO','SOLTEIRO']);
+            $table->enum('estado_civil',['CASADO','SOLTEIRO'])->default('SOLTEIRO');
             $table->string('bi',100)->unique();
             $table->string('seg_telefone',100)->default('NO');
             $table->string('seg_email',100)->default('NO');
