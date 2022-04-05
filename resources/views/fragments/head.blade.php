@@ -1,7 +1,8 @@
 
+<link rel="stylesheet" href="{{asset('css/geral.css')}}"/>
 <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}"/>
 
-<link rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.min.css"/>
+<link rel="stylesheet" href="https://bootswatch.com/5/zephyr/bootstrap.min.css"/>
 <!--
     candidatos de tema:
     cosmos: 5

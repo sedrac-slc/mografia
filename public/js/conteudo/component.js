@@ -46,9 +46,6 @@ function links(){
 function parg(id,descricao){
     return `
     <div class="parg border bg-white mt-2" id="parg-`+id+`">
-        <div class="m-1 border-bottom pb-2">`
-            +form()+
-        `</div>
         <div class="p-1 ml-2 mr-2">
             <div class="parg-descricao mb-1 text-justify" id="parg-descricao">`
               +descricao+

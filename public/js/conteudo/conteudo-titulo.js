@@ -6,7 +6,9 @@ key.on('keyup',(event)=>{
         let tam = key.val().length - 1;
         let info = key.val().substring(0,tam);
         if(info.length > 0){
-            console.log(contador);
+            let nome = $('#nome');
+            let descricao = $('#conteudo');
+            let prioridade = $('#prioridade');
             $("#container").append(parg(contador,info));
             contador++;
         }
