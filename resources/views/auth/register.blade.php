@@ -13,10 +13,6 @@
 @endsection
 @section('content')
 <section class="container p-2 bg-light w-75 m-auto mt-4">
-    <a class="text-danger ml-3" href="{{ route('home') }}">
-        <i class="fa-solid fa-angles-left"></i>
-        <span>voltar</span>
-    </a>
     <form method="POST" action="{{route('register.user')}}" class="p-3">
         @csrf
          @include('fragments.error')
