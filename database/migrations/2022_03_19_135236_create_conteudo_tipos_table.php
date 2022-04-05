@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Provincia;
+use App\Models\ConteudoTipo;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,16 +14,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('provincias', function (Blueprint $table) {
+        Schema::create('conteudo_tipos', function (Blueprint $table) {
             $table->id();
-            $table->string('prov_descricao',70)->unique();
+            $table->string('con_descricao')->unique();
             $table->timestamps();
         });
 
-        if(Schema::hasTable('provincias')){
-            $list = ['Bengo','Benguela','Bíe','Cabinda','Cuando Cubango','Cuanza Norte','Cuanza Sul','Cunene','Huambo','Huila','Luanda','Lunda-Norte','Lunda-Sul','Malange','Moxico','Namibe','Uíge','Zaire'];
+        if(Schema::hasTable('conteudo_tipos')){
+            $list = ['GERAL','CONCEITO','HISTORIA','BIBLIOGRAFIA','PERCURSOR','IMPORTANCIA'];
             foreach($list as $e)
-                Provincia::create([ 'prov_descricao' => $e ]);
+                ConteudoTipo::create(['con_descricao' =>$e]);
         }
     }
 
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('provincias');
+        Schema::dropIfExists('conteudo_tipos');
     }
 };

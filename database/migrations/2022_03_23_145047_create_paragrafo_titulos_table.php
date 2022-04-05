@@ -17,14 +17,17 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('titulo_id')->unsigned();
-            $table->string('nome',100)->default('NO_CONTEUDO');
-            $table->enum('conteudo',['CONCEITO','HISTORIA','BIBLIOGRAFIA','PERCURSOR','GERAL','IMPORTANCIA'])->default('GERAL');
+            $table->bigInteger('conteudo_tipo_id')->unsigned();
+            $table->string('nome',100)->nullable();
             $table->longText('descricao');
             $table->integer('prioridade')->unsigned()->default(0);
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('titulo_id')->references('id')->on('titulos')->onDelete('cascade');
+            $table->foreign('conteudo_tipo_id')->references('id')->on('conteudo_tipos')->onDelete('cascade');
         });
+
+
     }
 
     /**

@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Nacionalidade extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['nac_descricao'];
 }

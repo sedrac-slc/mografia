@@ -1,5 +1,5 @@
-@extends('fragments.conteudo.layout')
-@section('content-conteudo')
+@extends('layouts.default')
+@section('content')
 <div class="">
      <form action="">
         <textarea class="form-control" name="" id="text" cols="30" rows="3"></textarea>
