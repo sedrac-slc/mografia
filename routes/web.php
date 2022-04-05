@@ -83,11 +83,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/painel/colaboracao/projecto/{id}',[ColaboracaoProjectosController::class,'colaborar'])->name('colaboracao.projecto');
     Route::post('/painel/colaboracao',[ColaboracaoProjectosController::class,'email'])->name('colaboracao.email');
     Route::delete('/painel/colaboracao',[ColaboracaoProjectosController::class,'destroy'])->name('colaboracao.delete');
+
+    Route::get('/municipio/json/{id}',[MunicipioController::class,'elements'])->name('municio.show.json');
+
 });
 
 
 Route::get('/tema/json/{desc}',[TemaController::class,'elements']);
-Route::get('/municipio/json/{id}',[MunicipioController::class,'elements']);
 Route::get('/projecto/tema/json/{id}',[ProjectoController::class,'elements']);
 Route::get('/list/produto/tipo/json',[ComponentsController::class,'listProjectoTipo']);
 

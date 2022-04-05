@@ -267,7 +267,7 @@
         </section>
     </div>
 </div>
-
+    <input type="hidden" name="" id="url-municipio-json" value="{{ route('municio.show.json','parm') }}">
 @endsection
 @section('javascript-painel')
     <script src="{{asset('js/painel/conta.js')}}"></script>

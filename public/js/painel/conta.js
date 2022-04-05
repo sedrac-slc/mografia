@@ -9,7 +9,8 @@ const municipio = $('#municipio_id');
 function municipios(value){
     let template = '';
     if(value > 0){
-        $.get('/laravel/mografia/public/municipio/json/'+value,function(response){
+        const url = $('#url-municipio-json').val().replace('parm',value);
+        $.get(url,function(response){
             response.forEach(mun => {
                template += `<option value='${mun.id}'>${mun.mun_descricao}</option>`;
            });
