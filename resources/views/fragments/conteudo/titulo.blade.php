@@ -1,10 +1,10 @@
 @extends('layouts.default')
-@section('bg-body','class=bg-primary')
+@section('bg-body', 'class=bg-primary')
 @section('content')
     @include('components.insert.nav-painel')
     <div class="position-relative">
         <div class="container bg-white rounded">
-            <input type="hidden" name="accao" id="accao" value="add"/>
+            <input type="hidden" name="accao" id="accao" value="add" />
             <section class="row g-3 mb-3" id="controls">
                 <div class="col-md-3 uni all">
                     <div class="input-group">
@@ -35,18 +35,21 @@
             </section>
         </div>
         <div class="position-absolute top-0 end-0 mr-2">
-            {{--<div class="cursor-pointer p-2">
+            {{-- <div class="cursor-pointer p-2">
                 <i class="fa-solid fa-eye fa-2x"></i>
                 {{-- <i class="fa-solid fa-eye-slash fa-2x"></i> --
-            </div>--}}
+            </div> --}}
             <div class="p-2 mt-3 border rounded bg-primary">
-                <div class="cursor-pointer text-white" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">
+                <div class="cursor-pointer text-white" data-toggle="popover" title="Popover title"
+                    data-content="And here's some amazing content. It's very engaging. Right?">
                     <i class="fa-brands fa-wpforms fa-2x"></i>
                 </div>
-                <div class="cursor-pointer mt-2 text-white" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">
+                <div class="cursor-pointer mt-2 text-white" data-toggle="popover" title="Popover title"
+                    data-content="And here's some amazing content. It's very engaging. Right?">
                     <i class="fa-solid fa-align-left fa-2x"></i>
                 </div>
-                <div class="cursor-pointer mt-2 text-white" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">
+                <div class="cursor-pointer mt-2 text-white" data-toggle="popover" title="Popover title"
+                    data-content="And here's some amazing content. It's very engaging. Right?">
                     <i class="fa-solid fa-file fa-2x"></i>
                 </div>
             </div>
@@ -55,9 +58,9 @@
 
     <section class="container mt-4 p-2 d-none" id="page">
         <section class="mb-2">
-            <h6 class="ml-4 text-muted">{{ $titulo->prioridade}}.{{ $titulo->descricao}}</h6>
+            <h6 class="ml-4 text-muted">{{ $titulo->prioridade }}.{{ $titulo->descricao }}</h6>
         </section>
-        <section  id="container" class="mt-2 position-relative">
+        <section id="container" class="mt-2 position-relative">
 
         </section>
     </section>

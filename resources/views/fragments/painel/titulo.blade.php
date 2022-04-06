@@ -16,7 +16,7 @@
             <div class="col-md-3 mt-2">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">prioridade</span>
-                    <input class="form-control" type="number" name="prioridade" id="prioridade" min="{{ $max + 1}}" value="{{ $max +1 }}" autocomplete="none" required disabled/>
+                    <input class="form-control" type="number" name="prioridade" id="prioridade" min="{{ $max + 1}}" value="{{ $max +1 }}" autocomplete="none" required/>
                 </div>
             </div>
             <div class="col-md-3 mt-2 d-flex">
