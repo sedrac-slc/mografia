@@ -21,7 +21,8 @@ class SubtituloController extends Controller
                                          ->where('user_id',Auth::user()->id)
                                          ->orderBy('id','DESC')
                                          ->paginate($this->tam);
-        return view('fragments.painel.subtitulo',compact('titulo','subtitulos'));
+        $max = DB::table('subtitulos')->where(['titulo_id'=>$titulo->id, 'user_id'=>Auth::user()->id])->max('prioridade');
+        return view('fragments.painel.subtitulo',compact('titulo','subtitulos','max'));
     }
 
     public function store(SubtituloRequest $request){
@@ -32,7 +33,8 @@ class SubtituloController extends Controller
                                              ->where('user_id',Auth::user()->id)
                                              ->orderBy('id','DESC')
                                              ->paginate($this->tam);
-            return view('fragments.painel.subtitulo',compact('titulo','subtitulos'));
+            $max = DB::table('subtitulos')->where(['titulo_id'=>$titulo->id, 'user_id'=>Auth::user()->id])->max('prioridade');
+            return view('fragments.painel.subtitulo',compact('titulo','subtitulos','max'));
         }catch(QueryException $e){
             return view('layouts.error',[
                 'message' => "Verifica sé subtitulo já não existe",
@@ -53,7 +55,8 @@ class SubtituloController extends Controller
                                              ->where('user_id',Auth::user()->id)
                                              ->orderBy('id','DESC')
                                              ->paginate($this->tam);
-            return view('fragments.painel.subtitulo',compact('titulo','subtitulos'));
+            $max = DB::table('subtitulos')->where(['titulo_id'=>$titulo->id, 'user_id'=>Auth::user()->id])->max('prioridade');
+            return view('fragments.painel.subtitulo',compact('titulo','subtitulos','max'));
         }catch(QueryException $e){
             return view('layouts.error',[
                 'message' => "actualização não foi possível, verifica sé subitulo já não existe",
@@ -74,7 +77,8 @@ class SubtituloController extends Controller
                                              ->where('user_id',Auth::user()->id)
                                              ->orderBy('id','DESC')
                                              ->paginate($this->tam);
-            return view('fragments.painel.subtitulo',compact('titulo','subtitulos'));
+            $max = DB::table('subtitulos')->where(['titulo_id'=>$titulo->id, 'user_id'=>Auth::user()->id])->max('prioridade');
+            return view('fragments.painel.subtitulo',compact('titulo','subtitulos','max'));
         }catch(QueryException $e){
             return view('layouts.error',[
                 'message' => "não foi possível apagar, verifica sé subtitulo já não existe",

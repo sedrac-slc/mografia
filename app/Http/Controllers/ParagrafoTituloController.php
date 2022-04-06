@@ -16,9 +16,10 @@ class ParagrafoTituloController extends Controller
     public function default($id){
         if(!$titulo = Titulo::find($id))
             return redirect()->back();
+        $tipo = "titulo";
         $conteudo =  ConteudoTipo::all();
         $max = ParagrafoTitulo::where(['titulo_id'=>$id , 'user_id'=>Auth::user()->id])->max('prioridade');
-        return view('fragments.conteudo.titulo',compact('titulo','max','conteudo'));
+        return view('fragments.conteudo.titulo',compact('titulo','max','conteudo','tipo'));
     }
 
 }

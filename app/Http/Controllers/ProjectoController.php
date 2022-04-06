@@ -34,7 +34,8 @@ class ProjectoController extends Controller
                     ->orderBy('id','DESC')
                     ->paginate($this->tam);
         $redirect = "projecto";
-        return view("fragments.painel.titulo",compact('redirect','tema','projecto','titulos'));
+        $max =  DB::table('titulos')->where(['projecto_id'=>$projecto->id,'user_id'=>Auth::user()->id])->max('prioridade');
+        return view("fragments.painel.titulo",compact('redirect','tema','projecto','titulos','max'));
     }
 
     public function default($id){

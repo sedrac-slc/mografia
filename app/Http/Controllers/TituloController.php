@@ -21,7 +21,8 @@ class TituloController extends Controller
                                          ->where('user_id',Auth::user()->id)
                                          ->orderBy('id','DESC')
                                          ->paginate($this->tam);
-        return view('fragments.painel.subtitulo',compact('titulo','subtitulos'));
+        $max = DB::table('subtitulos')->where(['titulo_id'=>$titulo->id, 'user_id'=>Auth::user()->id])->max('prioridade');
+        return view('fragments.painel.subtitulo',compact('titulo','subtitulos','max'));
     }
 
     public function default($id){
@@ -32,6 +33,7 @@ class TituloController extends Controller
                                        ->orderBy('id','DESC')
                                        ->paginate($this->tam);
         $redirect = "tema";
+        //$max =  DB::table('titulos')->where(['projecto_id'=>$projecto->id,'user_id'=>Auth::user()->id])->max('prioridade');
         return view('fragments.painel.titulo',compact('redirect','tema','titulos'));
     }
 
@@ -46,7 +48,8 @@ class TituloController extends Controller
                                            ->orderBy('id','DESC')
                                            ->paginate($this->tam);
             $redirect = "projecto";
-            return view('fragments.painel.titulo',compact('tema','projecto','titulos','redirect'));
+            $max =  DB::table('titulos')->where(['projecto_id'=>$projecto->id,'user_id'=>Auth::user()->id])->max('prioridade');
+            return view('fragments.painel.titulo',compact('tema','projecto','titulos','redirect','max'));
         }catch(QueryException $e){
             return view('layouts.error',[
                 'message' => "Verifica sé Titulo já não existe",
@@ -68,7 +71,8 @@ class TituloController extends Controller
                                                ->orderBy('id','DESC')
                                                ->paginate($this->tam);
                 $redirect = "projecto";
-                return view('fragments.painel.titulo',compact('tema','titulos','projecto','redirect'));
+                $max =  DB::table('titulos')->where(['projecto_id'=>$projecto->id,'user_id'=>Auth::user()->id])->max('prioridade');
+                return view('fragments.painel.titulo',compact('tema','titulos','projecto','redirect','max'));
             }
            return redirect()->back();
         }catch(QueryException $e){
@@ -93,7 +97,8 @@ class TituloController extends Controller
                                              ->orderBy('id','DESC')
                                              ->paginate($this->tam);
                 $redirect = "projecto";
-                return view('fragments.painel.titulo',compact('titulos','projecto','tema','redirect'));
+                $max =  DB::table('titulos')->where(['projecto_id'=>$projecto->id,'user_id'=>Auth::user()->id])->max('prioridade');
+                return view('fragments.painel.titulo',compact('titulos','projecto','tema','redirect','max'));
             }
             return redirect()->back();
       }catch(QueryException $e){

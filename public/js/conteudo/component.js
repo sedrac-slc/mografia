@@ -23,7 +23,7 @@ function form(){
 
 function links(){
     return `
-    <div class="d-flex text-center mb-2 mt-1 border-top pt-2">
+    <div class="d-flex text-center mb-2 mt-1 border-top pt-2 parg-control">
         <a href="#" class="text-primary text-decoration-none">
             <i class="fa-solid fa-eye"></i>
             <span>oculta</span>
@@ -45,9 +45,9 @@ function links(){
 
 function parg(id,descricao){
     return `
-    <div class="parg border bg-white mt-2" id="parg-`+id+`">
-        <div class="p-1 ml-2 mr-2">
-            <div class="parg-descricao mb-1 text-justify" id="parg-descricao">`
+    <div class="parg bg-white mt-2" id="parg-`+id+`">
+        <div class="p-1 ml-2 mr-2 d-block">
+            <div class="parg-descricao mb-1 text-justify text-indent text-overflow-ellipsis" id="parg-descricao">`
               +descricao+
             `</div>`
              +links()+
