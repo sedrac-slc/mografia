@@ -47,8 +47,9 @@ class ParagrafoTituloController extends Controller
     }
 
     public function update_json(Request $request, $id){
-
-        return response()->json($request->all());
+        if(!$paragrafo = ParagrafoTitulo::find($id))
+            return response()->json(["update"=>false]);
+        $paragrafo->update($request->all());
     }
 
 }
