@@ -3,6 +3,26 @@ const key = $("#text");
 const page = $("#page");
 const container = $("#container");
 
+function eliminar(id){
+    var url = $('#url-delete').val().replace('parm',id);
+    $.get(url,(response)=>{
+        if(response.delete){
+            const painel = $('#parg-conteudo-'+id);
+            painel.remove();
+        }
+    });
+}
+
+function actualizar(id){
+   const pargAct = $('#parg-act-'+id);
+   $('#id').val(id);
+   $('#accao').val('upd');
+   $('#nome').val(pargAct.attr('nome'));
+   $('#text').val(pargAct.attr('descricao'));
+   $('#prioridade').val(pargAct.attr('prioridade'));
+   $('#conteudo_id').val(pargAct.attr('conteudo-tipo'));
+}
+
 function openPage(page){
     if (page.hasClass("d-none")) {
         page.removeClass('d-none');
@@ -11,17 +31,20 @@ function openPage(page){
     }
 }
 
-page.ready(()=>{
-   const url = $('#url-show').val();
-   $.get(url,(response)=>{
-       if(response.length > 0){
-            openPage(page);
-            response.forEach(conteudo => {
-                container.append(parg(conteudo));
-            });
+function reboot(){
+    const url = $('#url-show').val();
+    $.get(url,(response)=>{
+        if(response.length > 0){
+             openPage(page);
+             response.forEach(conteudo => {
+                 container.append(parg(conteudo));
+             });
+        }
+    });
+}
 
-       }
-   });
+page.ready(()=>{
+    reboot();
 });
 
 function addSum(prioridade){
@@ -32,17 +55,26 @@ function addSum(prioridade){
 }
 
 function  crud(va,parms){
+    var url;
     let container = $("#container");
     switch(va){
         case "add":
-            const url = $('#url-add').val();
+            url = $('#url-add').val();
             $.post(url,parms,function(response){
                 container.append(parg(response.id, response.descricao));
                 addSum(response.prioridade);
             });
         break;
-        case "udp":
+        case "upd":
+            url = $('#url-upd').val().replace('parm', $("#id").val() );
+            $.post(url,parms,function(response){
+                //container.append(parg(response.id, response.descricao));
+                console.log(response);
+            });
 
+            $('#accao').val('add');
+            container.html('');
+            reboot();
         break;
     }
 }

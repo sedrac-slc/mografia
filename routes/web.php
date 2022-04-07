@@ -80,11 +80,13 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/conteudo/titulo/json/add',[ParagrafoTituloController::class,'store_json'])->name('conteudo.titulo.store.json');
     Route::get('/conteudo/titulo/json/show/{titulo}',[ParagrafoTituloController::class,'show_json'])->name('conteudo.titulo.show.json');
-    Route::get('/conteudo/titulo/json/delete/{titulo}',[ParagrafoTituloController::class,'delete_json'])->name('conteudo.titulo.delete.json');
+    Route::get('/conteudo/titulo/json/delete/{id}',[ParagrafoTituloController::class,'delete_json'])->name('conteudo.titulo.delete.json');
+    Route::post('/conteudo/titulo/json/upd/{id}',[ParagrafoTituloController::class,'update_json'])->name('conteudo.titulo.update.json');
 
     Route::post('/conteudo/subtitulo/json/add',[ParagrafoSubtituloController::class,'store_json'])->name('conteudo.subtitulo.store.json');
     Route::get('/conteudo/subtitulo/json/show/{subtitulo}',[ParagrafoSubtituloController::class,'show_json'])->name('conteudo.subtitulo.show.json');
-    Route::get('/conteudo/subtitulo/json/delete/{subtitulo}',[ParagrafoSubtituloController::class,'delete_json'])->name('conteudo.subtitulo.delete.json');
+    Route::get('/conteudo/subtitulo/json/delete/{id}',[ParagrafoSubtituloController::class,'delete_json'])->name('conteudo.subtitulo.delete.json');
+    Route::post('/conteudo/subtitulo/json/upd/{id}',[ParagrafoSubtituloController::class,'update_json'])->name('conteudo.subtitulo.update.json');
 
     Route::get('/painel/colaborador/{id}',[ColaboradorController::class,'insert'])->name('colaborador.insert');
 

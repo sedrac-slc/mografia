@@ -46,4 +46,9 @@ class ParagrafoSubtituloController extends Controller
         return response()->json(["delete"=>true]);
     }
 
+    public function update_json(Request $request, $id){
+
+        return response()->json($request->all());
+    }
+
 }

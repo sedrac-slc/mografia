@@ -6,6 +6,7 @@
         <form class="container bg-white rounded " id="controls">
             @csrf
             <input type="hidden" id="tipo" value="{{ $tipo }}"/>
+            <input type="hidden" name="" id="id" value="">
             @if($tipo == "titulo")
               @isset($titulo)
                 <input type="hidden" id="chave" name="titulo_id" value="{{ $titulo->id }}"/>
@@ -82,23 +83,23 @@
         </section>
     </section>
 
-  @if($tipo == "titulo")
+   @if($tipo == "titulo")
         @isset($titulo)
         <input type="hidden" name="" id="url-add" value="{{ route('conteudo.titulo.store.json') }}"/>
         <input type="hidden" name="" id="url-show" value="{{ route('conteudo.titulo.show.json',$titulo->id) }}"/>
         <input type="hidden" name="" id="url-delete" value="{{ route('conteudo.titulo.delete.json','parm') }}"/>
+        <input type="hidden" name="" id="url-upd" value="{{ route('conteudo.titulo.update.json','parm') }}"/>
         @endisset
    @elseif($tipo == "subtitulo")
         @isset($subtitulo)
         <input type="hidden" name="" id="url-add" value="{{ route('conteudo.subtitulo.store.json') }}"/>
         <input type="hidden" name="" id="url-show" value="{{ route('conteudo.subtitulo.show.json',$subtitulo->id) }}"/>
         <input type="hidden" name="" id="url-delete" value="{{ route('conteudo.subtitulo.delete.json','parm') }}"/>
+        <input type="hidden" name="" id="url-upd" value="{{ route('conteudo.subtitulo.update.json','parm') }}"/>
         @endisset
    @endif
 @endsection
-
 @section('javascript')
-    <script src="{{ asset('js/conteudo/component.js') }}"></script>
-    <script src="{{ asset('js/conteudo/conteudo-titulo.js') }}"></script>
-    <script src="{{ asset('js/conteudo/functions.js') }}"><script>
+   <script src="{{ asset('js/conteudo/component.js') }}"></script>
+   <script src="{{ asset('js/conteudo/conteudo-titulo.js') }}"></script>
 @endsection
