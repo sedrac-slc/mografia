@@ -61,20 +61,19 @@ function  crud(va,parms){
         case "add":
             url = $('#url-add').val();
             $.post(url,parms,function(response){
-                container.append(parg(response.id, response.descricao));
+                container.append(parg(response));
                 addSum(response.prioridade);
             });
         break;
         case "upd":
             url = $('#url-upd').val().replace('parm', $("#id").val() );
             $.post(url,parms,function(response){
-                //container.append(parg(response.id, response.descricao));
-                console.log(response);
+                if(!response.update){
+                    $('#accao').val('add');
+                    container.html('');
+                    reboot();
+                }
             });
-
-            $('#accao').val('add');
-            container.html('');
-            reboot();
         break;
     }
 }
