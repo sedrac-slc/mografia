@@ -78,6 +78,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/conteudo/titulo/{id}',[ParagrafoTituloController::class,'default'])->name('conteudo.titulo.page');
     Route::get('/conteudo/subtitulo/{id}',[ParagrafoSubtituloController::class,'default'])->name('conteudo.subtitulo.page');
 
+    Route::post('/conteudo/titulo/json/add',[ParagrafoTituloController::class,'store_json'])->name('conteudo.titulo.store.json');
+    Route::get('/conteudo/titulo/json/show/{titulo}',[ParagrafoTituloController::class,'show_json'])->name('conteudo.titulo.show.json');
+    Route::get('/conteudo/titulo/json/delete/{titulo}',[ParagrafoTituloController::class,'delete_json'])->name('conteudo.titulo.delete.json');
+
+    Route::post('/conteudo/subtitulo/json/add',[ParagrafoSubtituloController::class,'store_json'])->name('conteudo.subtitulo.store.json');
+    Route::get('/conteudo/subtitulo/json/show/{subtitulo}',[ParagrafoSubtituloController::class,'show_json'])->name('conteudo.subtitulo.show.json');
+    Route::get('/conteudo/subtitulo/json/delete/{subtitulo}',[ParagrafoSubtituloController::class,'delete_json'])->name('conteudo.subtitulo.delete.json');
+
     Route::get('/painel/colaborador/{id}',[ColaboradorController::class,'insert'])->name('colaborador.insert');
 
     Route::get('/painel/colaboracao/projecto/{id}',[ColaboracaoProjectosController::class,'colaborar'])->name('colaboracao.projecto');

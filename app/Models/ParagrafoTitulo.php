@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ParagrafoTitulo extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['user_id','titulo_id','conteudo_tipo_id','nome','descricao','prioridade'];
+
 }

@@ -21,36 +21,31 @@ function form(){
     </form>`;
 }
 
-function links(){
-    return `
-    <div class="d-flex text-center mb-2 mt-1 border-top pt-2 parg-control">
-        <a href="#" class="text-primary text-decoration-none">
+function links(conteudo){
+    return `<div class="d-flex text-center mt-1 pt-2 parg-control d-none ml-5 border-bottom">
+        <a href="#" class="text-primary text-decoration-none" data-toggle="tooltip" data-placement="left" title="oculta">
             <i class="fa-solid fa-eye"></i>
-            <span>oculta</span>
         </a>
-        <a href="#" class="ml-2 text-danger text-decoration-none">
+        <a href="#" class="ml-2 text-danger text-decoration-none ml-3" data-toggle="tooltip" data-placement="left" title="eliminar"
+        onclick="eliminar(${conteudo.id})">
             <i class="fa-solid fa-close"></i>
-            <span>eliminar</span>
         </a>
-        <a href="#" class="ml-2 text-info text-decoration-none">
+        <a href="#" class="ml-2 text-info text-decoration-none ml-3" data-toggle="tooltip" data-placement="left" title="actualizar">
             <i class="fa-solid fa-pencil"></i>
-            <span>actualização</span>
         </a>
-        <a href="#" class="ml-2 text-success text-decoration-none">
+        <a href="#" class="ml-2 text-success text-decoration-none ml-3" data-toggle="tooltip" data-placement="left" title="compartilha">
             <i class="fa-solid fa-share"></i>
-            <span>compartilha</span>
         </a>
     </div>`;
 }
 
-function parg(id,descricao){
-    return `
-    <div class="parg bg-white mt-2" id="parg-`+id+`">
-        <div class="p-1 ml-2 mr-2 d-block">
-            <div class="parg-descricao mb-1 text-justify text-indent text-overflow-ellipsis" id="parg-descricao">`
-              +descricao+
-            `</div>`
-             +links()+
-        `</div>
+function parg(conteudo){
+    return `<div class="parg bg-white mt-2" id="parg-conteudo-${conteudo.id}">
+        <div class="p-1 ml-2 mr-2 d-block">`
+        +links(conteudo)+
+          `<div class="parg-descricao mb-1 text-justify text-indent text-overflow-ellipsis" id="parg-descricao">
+                ${conteudo.descricao}
+            </div>
+        </div>
     </div>`;
 }
