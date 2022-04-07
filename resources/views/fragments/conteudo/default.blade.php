@@ -101,5 +101,5 @@
 @endsection
 @section('javascript')
    <script src="{{ asset('js/conteudo/component.js') }}"></script>
-   <script src="{{ asset('js/conteudo/conteudo-titulo.js') }}"></script>
+   <script src="{{ asset('js/conteudo/operacoes.js') }}"></script>
 @endsection
