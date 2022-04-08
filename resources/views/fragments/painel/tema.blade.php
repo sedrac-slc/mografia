@@ -13,7 +13,11 @@
         </div>
     </form>
     <section class="p-2 m-auto">
-        @include('components.table.tema')
+        @if(count($temas->all()) > 0)
+            @include('components.table.tema')
+        @else
+            @include('components.insert.informacoes.tema')
+        @endif
      </section>
 </section>
 @endsection

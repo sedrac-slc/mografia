@@ -19,7 +19,7 @@
         </div>
         <div class="list-group list-group-flush">
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{route('painel.page','home')}}" id="home">
-                <i class="fa-solid fa-info"></i>
+                <i class="fa-solid fa-circle-info"></i>
                 <span>Informações</span>
             </a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{route('painel.page','tema')}}" id="tema">

@@ -3,7 +3,7 @@
 @endsection
 @section('content-painel')
 <section class="container m-auto">
-    @isset($projectos)
+    @if(count($projectos->all()) > 0)
         <section id="formulario-titulo">
         @csrf
             <div class="input-group">
@@ -23,7 +23,9 @@
 
             </div>
         </div>
-    @endisset
+    @else
+        @include('components.insert.informacoes.indece')
+    @endif
 </section>
 
 <input type="hidden" id="url-add-titulo" value="{{route('titulo.store.json')}}"/>

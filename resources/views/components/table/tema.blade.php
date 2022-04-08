@@ -1,9 +1,12 @@
 <div class="scroll">
 <table class="table table-borderless" id="table-tema">
     <thead class="bg-primary text-monospace">
-        <tr class="text-white">
-            <th colspan="5">
-                Listar\temas
+        <tr class="text-white text-center">
+            <th colspan="2">
+                Tema
+            </th>
+            <th colspan="3">
+                Acção
             </th>
         </tr>
     </thead>
