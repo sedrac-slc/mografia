@@ -24,10 +24,12 @@ function buildTree(id){
 }
 
 searchProjecto.ready(function(){
+    tituloPrip(searchProjecto.val());
     buildTree(searchProjecto.val());
 });
 
 searchProjecto.on('change',function(){
     tituloLista.html("");
+    tituloPrip(searchProjecto.val());
     buildTree(searchProjecto.val());
 });
