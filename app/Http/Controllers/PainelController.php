@@ -47,6 +47,7 @@ class PainelController extends Controller
                     ->select('temas.descricao','projectos.nome','projectos.id')
                     ->get();
                // dd($projectos);
+
                 return view("fragments.painel.indece",compact('projectos'));
             default:
                 return view("dashboard");

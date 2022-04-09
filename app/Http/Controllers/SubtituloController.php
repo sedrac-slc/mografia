@@ -117,4 +117,11 @@ class SubtituloController extends Controller
         return response()->json(Subtitulo::where('titulo_id',$id)->get());
     }
 
+    public function max_prioridade_json($id){
+        return response()->json(['max'=>DB::table('subtitulos')
+            ->where(['projecto_id'=>$id,'user_id'=>Auth::user()->id])
+            ->max('prioridade')
+        ]);
+    }
+
 }

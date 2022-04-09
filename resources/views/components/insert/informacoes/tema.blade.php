@@ -1,5 +1,5 @@
 <section class="container m-auto border rounded p-2">
-    <h5 class="text-monospace text-center text-danger border-bottom font-weight-bold">De momento não há nenhum, registos.</h5>
+    <h5 class="text-monospace text-center text-danger border-bottom font-weight-bold">De momento não há nenhum, registos [temas].</h5>
     <p class="text-indent-10px">
         <i class="fa-solid fa-circle-info"></i>
         <span>Informacões</span>

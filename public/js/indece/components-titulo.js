@@ -1,5 +1,27 @@
 const indece = $('#indece');
 
+function maxPri(url){
+    var num = 0;
+    $.get(url,function(response){
+        num = parseInt(response.max);
+        const prip = $('#tit-prioridade');
+        prip.attr('min',num+1);
+        prip.val(num+1);
+    });
+    return  num;
+}
+
+function maxPrioridade(id,tipo){
+    return maxPri($("#url-max-"+tipo).val().replace('parm',id));
+}
+
+
+function tituloPrip(va){
+    maxPrioridade(va,'titulo');
+}
+
+
+
 indece.ready(()=>{
     indece.addClass('bg-primary text-white');
 });
@@ -35,6 +57,7 @@ btnTitulo.on('click',function(event){
                 if(response != null){
                     tituloLista.append(divTitulo(response));
                     contadorTitulo++;
+                    tituloPrip(searchProjecto.val());
                 }
             }).fail(function() {
 

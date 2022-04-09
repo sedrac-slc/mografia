@@ -138,4 +138,11 @@ class TituloController extends Controller
         return response()->json(Titulo::where('projecto_id',$id)->get());
     }
 
+    public function max_prioridade_json($id){
+        return response()->json(['max'=>DB::table('titulos')
+            ->where(['projecto_id'=>$id,'user_id'=>Auth::user()->id])
+            ->max('prioridade')
+        ]);
+    }
+
 }

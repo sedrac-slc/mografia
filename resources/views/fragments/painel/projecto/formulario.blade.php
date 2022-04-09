@@ -5,7 +5,7 @@
 @endsection
 @section('content')
 @include('components.insert.nav-painel')
-<section class="m-auto w-75 p-2 bg-white roundend">
+<section class="m-auto w-75 p-2 bg-white rounded">
     <div class="text-center">
         <h4>{{$tema->descricao}}</h4>
     </div>

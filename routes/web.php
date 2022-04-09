@@ -58,6 +58,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/painel/titulo/json/apagar/{id}',[TituloController::class,'destroy_json'])->name('titulo.delete.json');
     Route::post('/painel/titulo/json/upd',[TituloController::class,'update_json'])->name('titulo.update.json');
     Route::get('/painel/titulo/json/{id}',[TituloController::class,'list_json'])->name('titulo.list.json');
+    Route::get('/painel/titulo/max/prioridade/json/{id}',[TituloController::class,'max_prioridade_json'])->name('titulo.max.prioridade.json');
 
     Route::get('/painel/subtitulo/{id}',[SubtituloController::class,'default'])->name('subtitulo.page');
     Route::post('/painel/subtitulo',[SubtituloController::class,'store'])->name('subtitulo.create');
@@ -68,6 +69,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/painel/subtitulo/json/apagar/{id}',[SubtituloController::class,'destroy_json'])->name('subtitulo.delete.json');
     Route::post('/painel/subtitulo/json/upd',[SubtituloController::class,'update_json'])->name('subtitulo.update.json');
     Route::get('/painel/subtitulo/json/{id}',[SubtituloController::class,'list_json'])->name('subtitulo.list.json');
+    Route::get('/painel/subtitulo/max/prioridade/json/{id}',[SubtituloController::class,'max_prioridade_json'])->name('subtitulo.max.prioridade.json');
 
     Route::get('/painel/projecto/titulo/{id}',[ProjectoController::class,'titulo'])->name('projecto.titulo');
     Route::get('/painel/projecto/{id}',[ProjectoController::class,'default'])->name('projecto.page');

@@ -96,8 +96,8 @@ function divTitulo(titulo){
         onclick="ocultarTodosSubtitulos(${titulo.id})">
             <i class="fa fa-eye"></i>
         </a>
+        <input class="form-control text-center" style="width:70px;" id="input-tit-prioridade-${titulo.id}" value="${titulo.prioridade}." readonly/>
         <input class="form-control tit-conteudo w-75" value="${titulo.descricao}" id="input-tit-descricao-${titulo.id}" readonly/>
-        <input class="form-control w-25" id="input-tit-prioridade-${titulo.id}" value="${titulo.prioridade}" readonly/>
     </div>`
         +formSubtitulo(titulo)+
    `<div class="ml-5" id="subtitulo-lista-${titulo.id}"> </div>
