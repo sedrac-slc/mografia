@@ -66,6 +66,28 @@
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Auth/User</a>
                             @include('components.insert.user')
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-keyboard text-white"></i>
+                                <span class="ml-3">Relatório</span>
+                            </a>
+                            <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+                              <li>
+                                <a class="dropdown-item" href="{{ route('titulo.relatorio') }}">
+                                    titulo
+                                </a>
+                              </li>
+                              <a class="dropdown-item" href="{{ route('subtitulo.relatorio') }}">
+                                    subtitulo
+                              </a>
+                              <li><hr class="dropdown-divider"></li>
+                              <li>
+                                <a class="dropdown-item" href="{{ route('subtitulo.relatorio') }}">
+                                   indece
+                                </a>
+                              </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
