@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Titulo;
 use App\Http\Requests\TituloRequest;
-
+use Barryvdh\DomPDF\PDF;
+//use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -143,6 +144,12 @@ class TituloController extends Controller
             ->where(['projecto_id'=>$id,'user_id'=>Auth::user()->id])
             ->max('prioridade')
         ]);
+    }
+
+    public function relatorio(){
+        $titulos = Titulo::all();
+        $pdf = PDF::loadView("relatorio.titulo",compact('titulos'));
+        return $pdf->setPaper('a4')->stream('titulo');
     }
 
 }

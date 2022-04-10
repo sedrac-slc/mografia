@@ -53,6 +53,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/painel/titulo',[TituloController::class,'store'])->name('titulo.create');
     Route::put('/painel/titulo',[TituloController::class,'update'])->name('titulo.update');
     Route::delete('/painel/titulo',[TituloController::class,'destroy'])->name('titulo.delete');
+    Route::get('/painel/titulo/relatorio',[TituloController::class,'relatorio'])->name('titulo.relatorio');
 
     Route::post('/painel/titulo/json/add',[TituloController::class,'store_json'])->name('titulo.store.json');
     Route::get('/painel/titulo/json/apagar/{id}',[TituloController::class,'destroy_json'])->name('titulo.delete.json');
