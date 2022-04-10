@@ -30,6 +30,9 @@
     </form>
     <section class="">
         @include('components.table.subtitulo')
+        <a class="btn btn-primary mt-2 rounded" href="{{ route('subtitulo.relatorio') }}">
+            relatório
+        </a>
      </section>
 </section>
 @endsection

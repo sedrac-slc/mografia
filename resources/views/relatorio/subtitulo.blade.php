@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>titulos\relatorios</title>
+    <title>subtitulos\relatorios</title>
 </head>
 
 <body>
@@ -18,10 +18,10 @@
 @endphp
     <section class="bg-dark" style="{{ $div }}">
         <h2 style="{{ $default }} {{ $titulo }}">Titulos</h2>
-        @foreach ($titulos as $titulo)
+        @foreach ($subtitulos as $ubtitulo)
             <p style="{{ $default }} {{ $elementos }}">
-                <span style="{{ $enfase }}">{{ $titulo->prioridade }}.</span>
-                {{ $titulo->descricao }}
+                <span style="{{ $enfase }}">{{ $titulo->prioridade }}.{{ $subtitulo->prioridade }}</span>
+                {{ $subtitulo->descricao }}
             </p>
         @endforeach
     </section>

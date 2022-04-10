@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Subtitulo;
 use App\Http\Requests\SubtituloRequest;
-
+use App\Models\Titulo;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -122,6 +123,12 @@ class SubtituloController extends Controller
             ->where(['titulo_id'=>$id,'user_id'=>Auth::user()->id])
             ->max('prioridade')
         ]);
+    }
+
+    public function relatorio(Request $request){
+        $titulos = Titulo::all();
+        $pdf = PDF::loadView("relatorio.subtitulo",compact('titulos'));
+        return $pdf->setPaper('a4')->stream('subtitulo');
     }
 
 }

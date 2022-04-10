@@ -2,8 +2,8 @@
 <table class="table table-borderless" id="">
     <thead class="bg-primary text-monospace">
         <tr class="text-white text-center">
-            <th class="bg-white">
-                <a class="text-decoration-none text-danger"  href="{{route('projecto.titulo',$titulo->projecto_id)}}"
+            <th>
+                <a class="text-decoration-none text-white"  href="{{route('projecto.titulo',$titulo->projecto_id)}}"
                    data-toggle="tooltip" data-placement="bottom" title="voltar">
                     <i class="fa-solid fa-angles-left"></i>
                 </a>

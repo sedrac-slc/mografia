@@ -2,12 +2,12 @@
 <table class="table table-borderless" id="table-titulo">
     <thead class="bg-primary text-monospace">
         <tr class="text-white text-center">
-            <th class="bg-white">
+            <th class="">
                 <a class="text-decoration-none text-danger"  href="{{route('painel.page',$redirect)}}" data-toggle="tooltip" data-placement="bottom" title="voltar">
                     <i class="fa-solid fa-angles-left"></i>
                 </a>
             </th>
-            <th colspan="1">
+            <th>
                 Titulos
             </th>
             <th colspan="4">Acção</th>
