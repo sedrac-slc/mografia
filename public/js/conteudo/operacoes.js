@@ -60,6 +60,7 @@ function  crud(va,parms){
     switch(va){
         case "add":
             url = $('#url-add').val();
+            console.log(url);
             $.post(url,parms,function(response){
                 container.append(parg(response));
                 addSum(response.prioridade);

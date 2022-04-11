@@ -34,9 +34,6 @@
     </form>
     <section class="p-1 m-auto">
         @include('components.table.titulo')
-        <a class="btn btn-primary mt-2 rounded" href="{{ route('titulo.relatorio') }}">
-            relatório
-        </a>
      </section>
 </section>
 @endsection

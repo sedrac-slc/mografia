@@ -24,7 +24,7 @@ class ParagrafoSubtituloController extends Controller
 
     public function store_json(Request $request){
         $paragrafo = ParagrafoSubtitulo::create([
-            'titulo_id'=>$request->titulo_id,
+            'subtitulo_id'=>$request->subtitulo_id,
             'user_id'=>Auth::user()->id,
             'nome'=>$request->nome,
             'descricao'=>$request->descricao,

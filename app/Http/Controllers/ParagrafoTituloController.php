@@ -7,7 +7,7 @@ use App\Models\{
     Titulo,
     ParagrafoTitulo
 };
-
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -50,6 +50,12 @@ class ParagrafoTituloController extends Controller
         if(!$paragrafo = ParagrafoTitulo::find($id))
             return response()->json(["update"=>false]);
         $paragrafo->update($request->all());
+    }
+
+    public function relatorio(Request $request){
+        $titulos = Titulo::all();
+        $pdf = PDF::loadView("relatorio.conteudo",compact('titulos'));
+        return $pdf->setPaper('a4')->stream('titulo');
     }
 
 }

@@ -79,7 +79,9 @@ Route::middleware('auth')->group(function () {
     Route::put('/painel/projecto',[ProjectoController::class,'update'])->name('projecto.update');
     Route::delete('/painel/projecto',[ProjectoController::class,'destroy'])->name('projecto.delete');
 
+    Route::get('/conteudo/titulo/relatorio',[ParagrafoTituloController::class,'relatorio'])->name('conteudo.relatorio');
     Route::get('/conteudo/titulo/{id}',[ParagrafoTituloController::class,'default'])->name('conteudo.titulo.page');
+
     Route::get('/conteudo/subtitulo/{id}',[ParagrafoSubtituloController::class,'default'])->name('conteudo.subtitulo.page');
 
     Route::post('/conteudo/titulo/json/add',[ParagrafoTituloController::class,'store_json'])->name('conteudo.titulo.store.json');

@@ -82,8 +82,8 @@
                               </a>
                               <li><hr class="dropdown-divider"></li>
                               <li>
-                                <a class="dropdown-item" href="{{ route('subtitulo.relatorio') }}">
-                                   indece
+                                <a class="dropdown-item" href="{{ route('conteudo.relatorio') }}">
+                                   conteudo
                                 </a>
                               </li>
                             </ul>
