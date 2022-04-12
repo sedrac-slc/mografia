@@ -147,7 +147,7 @@ class TituloController extends Controller
     }
 
     public function relatorio(Request $request){
-        $titulos = Titulo::all();
+        $titulos = Titulo::where('user_id',Auth::user()->id)->get();
         $pdf = PDF::loadView("relatorio.titulo",compact('titulos'));
         return $pdf->setPaper('a4')->stream('titulo');
     }

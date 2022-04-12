@@ -126,7 +126,7 @@ class SubtituloController extends Controller
     }
 
     public function relatorio(Request $request){
-        $titulos = Titulo::all();
+        $titulos = Titulo::where('user_id',Auth::user()->id)->get();
         $pdf = PDF::loadView("relatorio.subtitulo",compact('titulos'));
         return $pdf->setPaper('a4')->stream('subtitulo');
     }

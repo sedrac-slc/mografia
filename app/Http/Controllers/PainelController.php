@@ -39,7 +39,11 @@ class PainelController extends Controller
                 if(!$colaborador = DB::table('colaboradors')->where('user_id',Auth::user()->id)->first())
                     return view("fragments.painel.colaborador");
                 $projectosColaboracao = ColaboracaoProjectosController::queryDefault($colaborador);
-                return view("fragments.painel.colaborador",compact('colaborador','projectosColaboracao'));
+                $colaboradores = DB::table('colaboradors')
+                                             ->join('users','users.id','=','colaboradors.user_id')
+                                             ->where('user_id','<>',Auth::user()->id)
+                                             ->get();
+                return view("fragments.painel.colaborador",compact('colaborador','colaboradores','projectosColaboracao'));
             case "indece":
                 $projectos = DB::table('projectos')
                     ->join('temas','temas.id','=','tema_id')
